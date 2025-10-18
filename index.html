@@ -8,7 +8,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ArjunAi – Plug-and-Play AI Agents</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="icon" href="/assets/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'inter': ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'primary': '#1a1a2e',
+              'secondary': '#16213e',
+              'accent': '#0f3460',
+              'accent-light': '#e94560',
+              'surface': '#f5f7fa',
+              'muted': '#6b7280',
+              'enterprise': '#0f172a',
+              'professional': '#1e40af',
+              'success': '#059669',
+              'warning': '#d97706',
+              'neutral': '#374151'
+            }
+          }
+        }
+      }
+    </script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -29,7 +55,9 @@
   "foundingDate": "2025-08-23",
   "description": "ArjunAi.ai builds plug-and-play AI Agents for modern businesses, founded in the name of Agrim and Arjun to drive ethical AI adoption and empower society.",
   "sameAs": [
-    "https://arjunai.ai"
+    "https://arjunai.ai",
+    "https://linkedin.com/company/arjunai",
+    "https://twitter.com/arjunai"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
@@ -100,127 +128,2240 @@
 </script>
 
   </head>
-  <body class="bg-white text-gray-800">
+  <body class="font-inter bg-gradient-to-br from-surface via-white to-surface text-primary antialiased">
     
-  <!-- Hero Section -->
-  <section class="relative h-[300px] md:h-[550px] w-full overflow-hidden">
-    <img src="assets/arjun_banner.png" alt="ArjunAi Banner" loading="lazy" class="w-full h-full object-cover" />
-  </section>
-<!-- Hero Text and CTA -->
-<section class="text-center mt-6 px-4">
-  <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
-    Plug-and-Play AI Agents for Modern Businesses
-  </h1>
-</section>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-lg border-b border-gray-100 z-50 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-18">
+          <div class="flex items-center space-x-3">
+            <img src="assets/logo.png" alt="ArjunAi Logo" class="h-12 w-12 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <span class="text-2xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">ArjunAi</span>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#how-it-works" class="text-neutral hover:text-accent transition-all duration-200 font-medium">How It Works</a>
+            <a href="#agents" class="text-neutral hover:text-accent transition-all duration-200 font-medium">Agents</a>
+            <a href="#architecture" class="text-neutral hover:text-accent transition-all duration-200 font-medium">Architecture</a>
+            <a href="#pricing" class="text-neutral hover:text-accent transition-all duration-200 font-medium">Pricing</a>
+            <a href="docs.html" target="_blank" class="text-neutral hover:text-accent transition-all duration-200 font-medium">Documentation</a>
+            <a href="#contact" class="text-neutral hover:text-accent transition-all duration-200 font-medium">Contact Us</a>
+            <a href="#get-started" class="bg-gradient-to-r from-accent to-professional text-white px-8 py-3 rounded-xl hover:shadow-lg transition-all duration-300 font-semibold">
+              Get Started
+            </a>
+          </div>
+          <a href="#get-started" class="md:hidden bg-gradient-to-r from-accent to-professional text-white px-6 py-2 rounded-xl hover:shadow-lg transition-all duration-300 font-semibold">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </nav>
 
-
-
-
-    <!-- Plug-and-Use AI Agents Section -->
-<section class="py-12 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-extrabold text-gray-900 mb-8">Plug-and-Use AI Agents</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen overflow-hidden bg-gradient-to-br from-enterprise via-primary to-secondary">
+      <!-- Animated Background -->
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-r from-accent/20 via-transparent to-accent-light/20 animate-pulse"></div>
+        <div class="absolute top-20 left-10 w-72 h-72 bg-professional/20 rounded-full blur-3xl animate-bounce" style="animation-delay: 0s; animation-duration: 6s;"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent-light/20 rounded-full blur-3xl animate-bounce" style="animation-delay: 2s; animation-duration: 8s;"></div>
+        <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-white/10 rounded-full blur-2xl animate-ping" style="animation-delay: 1s; animation-duration: 4s;"></div>
+      </div>
       
-      <!-- Persona Generator Agent -->
-      <div class="rounded-xl bg-white p-6 shadow-md transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:bg-indigo-50 hover:cursor-pointer">
-        <h3 class="text-xl font-semibold mb-2 text-indigo-600">Persona Generator Agent</h3>
-        <p class="text-gray-700 text-sm">Generate accurate customer personas using natural language inputs to fuel personalized marketing strategies.</p>
+      <!-- Floating Elements -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 animate-float">
+          <div class="w-8 h-8 bg-accent/30 rounded-lg rotate-45 animate-spin" style="animation-duration: 10s;"></div>
+        </div>
+        <div class="absolute top-3/4 right-1/4 animate-float" style="animation-delay: 2s;">
+          <div class="w-6 h-6 bg-accent-light/40 rounded-full animate-pulse"></div>
+        </div>
+        <div class="absolute top-1/2 right-1/3 animate-float" style="animation-delay: 4s;">
+          <div class="w-4 h-4 bg-white/20 rounded-sm rotate-12 animate-bounce"></div>
+        </div>
       </div>
-
-      <!-- Audience Activation Agent -->
-      <div class="rounded-xl bg-white p-6 shadow-md transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:bg-indigo-50 hover:cursor-pointer">
-        <h3 class="text-xl font-semibold mb-2 text-indigo-600">Audience Activation Agent</h3>
-        <p class="text-gray-700 text-sm">Segment and push audiences directly to your marketing platforms for faster, targeted campaign execution.</p>
-      </div>
-
-      <!-- Customer Journey Mapper -->
-      <div class="rounded-xl bg-white p-6 shadow-md transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:bg-indigo-50 hover:cursor-pointer">
-        <h3 class="text-xl font-semibold mb-2 text-indigo-600">Customer Journey Mapper</h3>
-        <p class="text-gray-700 text-sm">Visualize and understand key customer touchpoints, enabling better journey orchestration and experience optimization.</p>
-      </div>
-
-      <!-- Channel Performance Agent -->
-      <div class="rounded-xl bg-white p-6 shadow-md transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:bg-indigo-50 hover:cursor-pointer">
-        <h3 class="text-xl font-semibold mb-2 text-indigo-600">Channel Performance Agent</h3>
-        <p class="text-gray-700 text-sm">Analyze and compare how different marketing channels are contributing to your business goals.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Insight Agents Section -->
-<section class="py-12 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-extrabold text-gray-900 mb-8">Insight Agents</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       
-      <!-- Audience Overlap Analyzer -->
-      <div class="rounded-xl bg-white p-6 shadow-md transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:bg-indigo-50 hover:cursor-pointer">
-        <h3 class="text-xl font-semibold mb-2 text-teal-600">Audience Overlap Analyzer</h3>
-        <p class="text-gray-700 text-sm">Understand where your customer segments intersect across products, platforms, or brands.</p>
+      <!-- Main Content -->
+      <div class="relative z-10 flex items-center justify-center min-h-screen">
+        <div class="text-center px-4 max-w-6xl mx-auto">
+          <div class="mb-8 animate-fade-in-up">
+            <span class="inline-flex items-center bg-gradient-to-r from-accent/20 to-accent-light/20 text-accent-light px-6 py-3 rounded-full text-sm font-medium border border-accent-light/30 backdrop-blur-md shadow-lg">
+              <svg class="w-4 h-4 mr-2 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              Next-Generation AI Agents
+            </span>
+          </div>
+          
+          <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight animate-fade-in-up" style="animation-delay: 0.2s;">
+            <span class="text-white drop-shadow-2xl">Plug-and-Play</span>
+            <br>
+            <span class="bg-gradient-to-r from-accent-light via-accent to-accent-light bg-clip-text text-transparent animate-gradient-x">
+              AI Agents
+            </span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-lg animate-fade-in-up" style="animation-delay: 0.4s;">
+            Transform your business with intelligent agents that understand, analyze, and act on your data automatically across all domains.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style="animation-delay: 0.6s;">
+            <button onclick="showIndustryPopup()" class="group bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-white px-8 py-4 rounded-full font-bold text-base transition-all transform hover:scale-105 shadow-xl hover:shadow-accent/50">
+              <span class="flex items-center">
+                Start Free Trial
+                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </span>
+            </button>
+            
+            <button onclick="document.getElementById('demoModal').classList.remove('opacity-0', 'pointer-events-none'); document.getElementById('demoModalContent').classList.remove('opacity-0', 'scale-90');" class="group border-2 border-white/50 text-white hover:bg-white/20 px-8 py-4 rounded-full font-semibold text-base transition-all backdrop-blur-md hover:border-white/80">
+              <span class="flex items-center">
+                <svg class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Watch Demo
+              </span>
+            </button>
+            
+            <button onclick="document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' })" class="group border-2 border-accent-light/50 text-accent-light hover:bg-accent-light/20 px-8 py-4 rounded-full font-semibold text-base transition-all backdrop-blur-md hover:border-accent-light/80">
+              <span class="flex items-center">
+                <svg class="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                </svg>
+                View Pricing
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="flex flex-col items-center text-white/80">
+          <span class="text-sm mb-2 animate-pulse">Scroll to explore</span>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+    
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      @keyframes fade-in-up {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes gradient-x {
+        0%, 100% { background-size: 200% 200%; background-position: left center; }
+        50% { background-size: 200% 200%; background-position: right center; }
+      }
+      .animate-float { animation: float 6s ease-in-out infinite; }
+      .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; opacity: 0; }
+      .animate-gradient-x { animation: gradient-x 3s ease infinite; }
+    </style>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="py-24 bg-gradient-to-br from-white via-surface to-white relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle, #0f3460 1px, transparent 1px); background-size: 40px 40px;"></div>
+      </div>
+      
+      <!-- Floating Elements -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 left-10 w-32 h-32 bg-accent/10 rounded-full blur-2xl animate-pulse" style="animation-delay: 0s; animation-duration: 4s;"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 bg-accent-light/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s; animation-duration: 6s;"></div>
       </div>
 
-      <!-- Cohort Insights Agent -->
-      <div class="rounded-xl bg-white p-6 shadow-md transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:bg-indigo-50 hover:cursor-pointer">
-        <h3 class="text-xl font-semibold mb-2 text-teal-600">Cohort Insights Agent</h3>
-        <p class="text-gray-700 text-sm">Track how different cohorts behave over time to uncover trends and optimize user retention.</p>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <span class="inline-block bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Unified Intelligence
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+            Cross-Domain AI Architecture
+          </h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto mb-12">
+            Our unified platform connects AI agents across all business domains through a centralized intelligence layer that learns, adapts, and scales with your organization.
+          </p>
+        </div>
+        
+        <!-- Architecture Diagram -->
+        <div class="max-w-6xl mx-auto mb-16">
+          <div class="relative bg-gradient-to-br from-white to-surface rounded-3xl p-8 shadow-2xl border border-gray-100 hover:shadow-3xl transition-all duration-500 group">
+            <div class="absolute inset-0 bg-gradient-to-r from-accent/5 via-transparent to-accent-light/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <img src="assets/arjunai-cross-domain-architecture.png" alt="ArjunAi Cross-Domain Architecture" class="w-full h-auto rounded-2xl relative z-10">
+            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architecture Features -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Central Intelligence Hub -->
+          <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-accent/20 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-16 h-16 bg-gradient-to-br from-accent to-accent-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Central Intelligence Hub</h3>
+              <p class="text-muted leading-relaxed">Unified brain that coordinates all agents, manages knowledge, and ensures seamless communication across domains.</p>
+            </div>
+          </div>
+
+          <!-- Cross-Domain Learning -->
+          <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Cross-Domain Learning</h3>
+              <p class="text-muted leading-relaxed">Agents share insights across industries, continuously improving performance through collective intelligence and adaptive learning.</p>
+            </div>
+          </div>
+
+          <!-- Scalable Infrastructure -->
+          <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Scalable Infrastructure</h3>
+              <p class="text-muted leading-relaxed">Cloud-native architecture that scales from startup to enterprise, handling millions of operations with enterprise-grade security.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Specifications -->
+        <div class="mt-20 bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-8 border border-accent/10">
+          <div class="text-center mb-12">
+            <h3 class="text-3xl font-bold text-primary mb-4">Technical Excellence</h3>
+            <p class="text-lg text-muted max-w-2xl mx-auto">Built on cutting-edge technology stack for maximum performance, reliability, and security.</p>
+          </div>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-accent mb-2">99.9%</div>
+              <div class="text-muted font-medium">Uptime SLA</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-accent mb-2">&lt;100ms</div>
+              <div class="text-muted font-medium">Response Time</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-accent mb-2">500+</div>
+              <div class="text-muted font-medium">Integrations</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-accent mb-2">24/7</div>
+              <div class="text-muted font-medium">Monitoring</div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- Attribution Insights Agent -->
-      <div class="rounded-xl bg-white p-6 shadow-md transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:bg-indigo-50 hover:cursor-pointer">
-        <h3 class="text-xl font-semibold mb-2 text-teal-600">Attribution Insights Agent</h3>
-        <p class="text-gray-700 text-sm">Determine which touchpoints influence conversions and adjust budgets based on true performance.</p>
-      </div>
-
-      <!-- Index Reporting Agent -->
-      <div class="rounded-xl bg-white p-6 shadow-md transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:bg-indigo-50 hover:cursor-pointer">
-        <h3 class="text-xl font-semibold mb-2 text-teal-600">Index Reporting Agent</h3>
-        <p class="text-gray-700 text-sm">Evaluate your brand’s performance across KPIs like engagement, reach, and conversion with executive-ready reports.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-    <!-- CTA Section -->
-    <section id="cta" class="py-15 px-6 text-center bg-white">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Marketing with AI?</h2>
-      <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-8">
-        Join the early adopter list and get exclusive access to our plug-and-play AI Agents.
-      </p>
-      <a href="mailto:contact@arjunai.ai" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-indigo-700 transition">
-  Request Access
-</a>
-
     </section>
 
-    <!-- Footer -->
-   <!-- Social Icons (Centered) -->
-<div class="w-full flex justify-center mt-6">
-  <div class="flex space-x-6">
-    <!-- LinkedIn -->
-    <a href="https://linkedin.com/company/arjunai-ai" target="_blank" aria-label="LinkedIn" class="text-gray-500 hover:text-[#0077b5]">
-      <svg class="h-6 w-6 sm:h-6 sm:w-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zM8.5 8h3.6v2.2h.05c.5-.95 1.72-1.95 3.55-1.95 3.8 0 4.5 2.5 4.5 5.7V24h-4V14.5c0-2.3-.04-5.2-3.2-5.2-3.2 0-3.7 2.5-3.7 5.1V24h-4V8z"/>
-      </svg>
-    </a>
+    <!-- Features Section -->
+    <section id="agents" class="py-24 bg-gradient-to-br from-surface via-white to-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+            Industry-Specific AI Agents
+          </h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">
+            Deploy specialized agents across 12+ industries including CDP, Healthcare, Finance, E-commerce, Manufacturing, and Education. Each agent is tailored for your specific industry needs.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- CDP Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
+                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">CDP Agent</h3>
+              <p class="text-muted leading-relaxed">Unify customer data across touchpoints, create 360° profiles, and activate segments for personalized experiences.</p>
+            </div>
+          </div>
 
-    <!-- Twitter -->
-    <a href="https://twitter.com/arjunaihq" target="_blank" aria-label="Twitter" class="text-gray-500 hover:text-[#1da1f2]">
-      <svg class="h-6 w-6 sm:h-6 sm:w-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M22.46 6c-.77.35-1.6.58-2.47.69a4.3 4.3 0 001.88-2.37 8.59 8.59 0 01-2.73 1.04 4.28 4.28 0 00-7.3 3.9 12.13 12.13 0 01-8.8-4.46 4.28 4.28 0 001.32 5.71A4.24 4.24 0 012 9.71v.05a4.28 4.28 0 003.43 4.2 4.28 4.28 0 01-1.93.07 4.28 4.28 0 003.99 2.97A8.58 8.58 0 012 19.54a12.1 12.1 0 006.56 1.92c7.87 0 12.17-6.52 12.17-12.17 0-.19-.01-.37-.02-.56A8.7 8.7 0 0024 5.3a8.5 8.5 0 01-2.54.7z"/>
-      </svg>
-    </a>
+          <!-- Digital Marketing Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-pink-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-pink-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-pink-200 transition-colors">
+                <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Digital Marketing</h3>
+              <p class="text-muted leading-relaxed">Optimize campaigns, automate ad bidding, and maximize ROI across all digital marketing channels.</p>
+            </div>
+          </div>
+
+          <!-- Healthcare Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-red-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-200 transition-colors">
+                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Healthcare Agent</h3>
+              <p class="text-muted leading-relaxed">Streamline patient care, automate medical records, and enhance clinical decision-making with AI-powered insights.</p>
+            </div>
+          </div>
+
+          <!-- Hospitality Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-orange-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-200 transition-colors">
+                <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Hospitality Agent</h3>
+              <p class="text-muted leading-relaxed">Enhance guest experiences, optimize bookings, and manage operations for hotels, restaurants, and travel services.</p>
+            </div>
+          </div>
+
+          <!-- Data Processing Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-accent/20 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Data Processing</h3>
+              <p class="text-muted leading-relaxed">Automatically clean, transform, and structure your data from any source into actionable insights.</p>
+            </div>
+          </div>
+
+          <!-- Document Analysis Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-accent/20 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Document Analysis</h3>
+              <p class="text-muted leading-relaxed">Extract key information from contracts, reports, and documents with intelligent parsing and summarization.</p>
+            </div>
+          </div>
+
+          <!-- Workflow Automation Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-accent/20 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Workflow Automation</h3>
+              <p class="text-muted leading-relaxed">Streamline repetitive tasks across departments with intelligent process automation and decision-making.</p>
+            </div>
+          </div>
+
+          <!-- Communication Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-accent/20 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Communication</h3>
+              <p class="text-muted leading-relaxed">Handle customer inquiries, internal communications, and stakeholder updates with contextual intelligence.</p>
+            </div>
+          </div>
+
+          <!-- Financial Services Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-green-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-200 transition-colors">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Financial Services</h3>
+              <p class="text-muted leading-relaxed">Automate fraud detection, risk assessment, and compliance reporting for banking and financial institutions.</p>
+            </div>
+          </div>
+
+          <!-- E-commerce Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-blue-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">E-commerce</h3>
+              <p class="text-muted leading-relaxed">Optimize product recommendations, inventory management, and personalized shopping experiences.</p>
+            </div>
+          </div>
+
+          <!-- Manufacturing Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-gray-300 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Manufacturing</h3>
+              <p class="text-muted leading-relaxed">Streamline production planning, predictive maintenance, and quality control in manufacturing operations.</p>
+            </div>
+          </div>
+
+          <!-- Education Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-indigo-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-200 transition-colors">
+                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Education</h3>
+              <p class="text-muted leading-relaxed">Personalize learning experiences, automate grading, and provide intelligent tutoring for educational institutions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intelligence Agents Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+            Unified Intelligence Layer
+          </h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">
+            Central intelligence hub that coordinates all agents, manages enterprise knowledge, ensures security, and provides strategic insights across your organization.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Predictive Analytics Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition-colors">
+                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Predictive Analytics</h3>
+              <p class="text-muted leading-relaxed">Forecast trends, identify risks, and predict outcomes across any business domain using advanced ML models.</p>
+            </div>
+          </div>
+
+          <!-- Knowledge Management Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition-colors">
+                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Knowledge Management</h3>
+              <p class="text-muted leading-relaxed">Centralize organizational knowledge, enable intelligent search, and facilitate seamless information sharing.</p>
+            </div>
+          </div>
+
+          <!-- Security & Compliance Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition-colors">
+                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Security & Compliance</h3>
+              <p class="text-muted leading-relaxed">Monitor security threats, ensure regulatory compliance, and protect sensitive data across all systems.</p>
+            </div>
+          </div>
+
+          <!-- Performance Optimization Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition-colors">
+                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Performance Optimization</h3>
+              <p class="text-muted leading-relaxed">Continuously monitor and optimize system performance, resource allocation, and operational efficiency.</p>
+            </div>
+          </div>
+
+          <!-- Quality Assurance Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition-colors">
+                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Quality Assurance</h3>
+              <p class="text-muted leading-relaxed">Monitor processes, detect anomalies, and ensure compliance across operations with continuous validation.</p>
+            </div>
+          </div>
+
+          <!-- Research Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition-colors">
+                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Research Agent</h3>
+              <p class="text-muted leading-relaxed">Gather competitive intelligence, market insights, and technical research from multiple sources automatically.</p>
+            </div>
+          </div>
+
+          <!-- Risk Management Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition-colors">
+                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Risk Management</h3>
+              <p class="text-muted leading-relaxed">Identify, assess, and mitigate business risks across operations, finance, and strategic initiatives.</p>
+            </div>
+          </div>
+
+          <!-- Decision Support Agent -->
+          <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-emerald-200 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition-colors">
+                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3">Decision Support</h3>
+              <p class="text-muted leading-relaxed">Provide data-driven recommendations and strategic insights for complex business decisions across all functions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-enterprise via-primary to-secondary relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-professional/20 to-accent-light/20"></div>
+      <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Ready to Transform Your Business?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Be among the first to experience next-generation AI agents that automate operations and unlock unprecedented growth opportunities.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onclick="showIndustryPopup()" class="bg-accent hover:bg-accent-light text-white font-semibold px-8 py-4 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg">
+            Start Free Trial
+          </button>
+          <button class="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-lg transition-all">
+            Schedule Demo
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gradient-to-br from-surface to-white relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle, #3B82F6 1px, transparent 1px); background-size: 30px 30px;"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <span class="inline-block bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Simple Process
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+            How ArjunAi Works
+          </h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">
+            Deploy intelligent AI agents in minutes, not months. Our plug-and-play platform makes AI automation accessible to everyone.
+          </p>
+        </div>
+
+        <!-- Visual Timeline -->
+        <div class="relative mb-20">
+          <!-- Connection Line -->
+          <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent-light to-emerald-500 transform -translate-y-1/2"></div>
+          
+          <!-- Steps -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Step 1 -->
+            <div class="relative">
+              <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-accent/20 hover:border-accent/40 transition-all hover:shadow-2xl hover:-translate-y-2 duration-300">
+                <div class="flex justify-center mb-6">
+                  <div class="w-16 h-16 bg-gradient-to-br from-accent to-accent-light rounded-2xl flex items-center justify-center shadow-lg transform rotate-3 hover:rotate-0 transition-transform">
+                    <span class="text-3xl font-bold text-white">1</span>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-primary mb-3">Sign Up & Choose</h3>
+                  <p class="text-muted text-sm leading-relaxed">Create your account in 30 seconds. Select from 12+ industry-specific AI agents or start with a template.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="relative">
+              <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-accent-light/20 hover:border-accent-light/40 transition-all hover:shadow-2xl hover:-translate-y-2 duration-300">
+                <div class="flex justify-center mb-6">
+                  <div class="w-16 h-16 bg-gradient-to-br from-accent-light to-blue-400 rounded-2xl flex items-center justify-center shadow-lg transform -rotate-3 hover:rotate-0 transition-transform">
+                    <span class="text-3xl font-bold text-white">2</span>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="w-12 h-12 bg-accent-light/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-accent-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-primary mb-3">Connect Data Sources</h3>
+                  <p class="text-muted text-sm leading-relaxed">Link your CRM, databases, APIs, or upload files. We support 500+ integrations with one-click authentication.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="relative">
+              <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-purple-200/20 hover:border-purple-200/40 transition-all hover:shadow-2xl hover:-translate-y-2 duration-300">
+                <div class="flex justify-center mb-6">
+                  <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg transform rotate-3 hover:rotate-0 transition-transform">
+                    <span class="text-3xl font-bold text-white">3</span>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-primary mb-3">Configure & Customize</h3>
+                  <p class="text-muted text-sm leading-relaxed">Set rules, define workflows, and customize agent behavior with our visual no-code builder or advanced settings.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="relative">
+              <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-emerald-200/20 hover:border-emerald-200/40 transition-all hover:shadow-2xl hover:-translate-y-2 duration-300">
+                <div class="flex justify-center mb-6">
+                  <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-500 rounded-2xl flex items-center justify-center shadow-lg transform -rotate-3 hover:rotate-0 transition-transform">
+                    <span class="text-3xl font-bold text-white">4</span>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-primary mb-3">Deploy & Automate</h3>
+                  <p class="text-muted text-sm leading-relaxed">Launch your agent with one click. Monitor performance, receive insights, and scale as you grow—all on autopilot.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-16">
+        <p class="text-xl text-muted mb-6">Ready to see how it works for your business?</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onclick="showIndustryPopup()" class="bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-white font-bold px-8 py-4 rounded-full transition-all transform hover:scale-105 shadow-lg">
+            Start Free Trial
+          </button>
+          <button id="openDemoModal" class="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-4 rounded-full font-bold transition-all">
+            <span class="flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              Watch 2-Minute Demo
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Video Demo Modal -->
+  <div id="demoModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+    <div id="demoModalContent" class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full mx-4 transform scale-90 transition-transform duration-300 opacity-0 relative overflow-hidden">
+      <!-- Close Button -->
+      <button id="closeDemoModal" class="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-2 text-gray-600 hover:text-gray-900 transition-colors shadow-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      
+      <!-- Video Container -->
+      <div class="relative" style="padding-bottom: 56.25%;">
+        <!-- Replace this placeholder with your actual video embed -->
+        <div id="videoPlaceholder" class="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary flex items-center justify-center">
+          <div class="text-center p-8">
+            <div class="w-24 h-24 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+              <svg class="w-12 h-12 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">ArjunAi Platform Demo</h3>
+            <p class="text-gray-300 mb-6">See how easy it is to deploy AI agents in your business</p>
+            <p class="text-accent-light text-sm">We are working on this </p>
+          </div>
+        </div>
+        
+        <!-- Example: YouTube Embed (uncomment and add your video ID) -->
+        <!--
+        <iframe 
+          id="demoVideo"
+          class="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&rel=0"
+          title="ArjunAi Demo Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        -->
+        
+        <!-- Example: Vimeo Embed (uncomment and add your video ID) -->
+        <!--
+        <iframe 
+          id="demoVideo"
+          class="absolute inset-0 w-full h-full"
+          src="https://player.vimeo.com/video/YOUR_VIDEO_ID?autoplay=1"
+          title="ArjunAi Demo Video"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        -->
+        
+        <!-- Example: Loom Embed (uncomment and add your video ID) -->
+        <!--
+        <iframe 
+          id="demoVideo"
+          class="absolute inset-0 w-full h-full"
+          src="https://www.loom.com/embed/YOUR_VIDEO_ID?autoplay=1"
+          title="ArjunAi Demo Video"
+          frameborder="0"
+          webkitallowfullscreen 
+          mozallowfullscreen 
+          allowfullscreen>
+        </iframe>
+        -->
+      </div>
+      
+      <!-- Video Info -->
+      <div class="p-6 bg-surface border-t border-gray-200">
+        <div class="flex items-center justify-between">
+          <div>
+            <h4 class="font-bold text-primary mb-1">ArjunAi Platform Overview</h4>
+            <p class="text-sm text-muted">Learn how to deploy AI agents in under 5 minutes</p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="showIndustryPopup()" class="bg-accent hover:bg-accent-light text-white px-6 py-2 rounded-full font-semibold transition-colors text-sm">
+              Start Free Trial
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
- 
- <footer class="text-center py-5 text-sm text-gray-500">
-  &copy; 2025 ArjunAi.ai · All rights reserved · 
-  <a href="mailto:contact@arjunai.ai" class="underline">Contact</a>
-</footer>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-gradient-to-br from-white via-surface to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <span class="inline-block bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Flexible Pricing
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+            Choose the Perfect Plan for Your Business
+          </h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">
+            Start free, scale as you grow. No credit card required for the free tier.
+          </p>
+        </div>
+
+        <!-- Pricing Toggle -->
+        <div class="flex justify-center mb-12">
+          <div class="bg-surface rounded-full p-1 inline-flex">
+            <button id="monthlyBtn" class="px-6 py-2 rounded-full font-semibold transition-all bg-accent text-white">
+              Monthly
+            </button>
+            <button id="annualBtn" class="px-6 py-2 rounded-full font-semibold transition-all text-muted hover:text-primary">
+              Annual
+              <span class="ml-2 text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Save 20%</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+          
+          <!-- Free Plan -->
+          <div class="bg-surface rounded-2xl p-8 border-2 border-gray-200 hover:border-accent/30 transition-all">
+            <div class="mb-6">
+              <h3 class="text-2xl font-bold text-primary mb-2">Free</h3>
+              <div class="flex items-baseline mb-2">
+                <span class="text-5xl font-bold text-primary">$0</span>
+                <span class="text-muted ml-2">/month</span>
+              </div>
+              <p class="text-muted">Perfect to get started</p>
+            </div>
+            
+            <ul class="space-y-3 mb-8 text-sm">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">2 AI Agents</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">1,000 actions/month</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">3 Industry templates</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">Basic analytics</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">Email support</span>
+              </li>
+            </ul>
+            
+            <button onclick="selectPlan('free')" class="w-full border-2 border-accent text-accent hover:bg-accent hover:text-white py-3 rounded-xl font-semibold transition-all">
+              Get Started Free
+            </button>
+          </div>
+
+          <!-- Starter Plan -->
+          <div class="bg-surface rounded-2xl p-8 border-2 border-gray-200 hover:border-accent/30 transition-all">
+            <div class="mb-6">
+              <h3 class="text-2xl font-bold text-primary mb-2">Starter</h3>
+              <div class="flex items-baseline mb-2">
+                <span class="text-5xl font-bold text-primary monthly-price">$49</span>
+                <span class="text-5xl font-bold text-primary annual-price hidden">$39</span>
+                <span class="text-muted ml-2">/month</span>
+              </div>
+              <p class="text-muted">For small teams</p>
+            </div>
+            
+            <ul class="space-y-3 mb-8 text-sm">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">5 AI Agents</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">10,000 actions/month</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">8 Industry templates</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">Advanced analytics</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">Priority email support</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">10 integrations</span>
+              </li>
+            </ul>
+            
+            <button onclick="selectPlan('starter')" class="w-full border-2 border-accent text-accent hover:bg-accent hover:text-white py-3 rounded-xl font-semibold transition-all">
+              Start 14-Day Trial
+            </button>
+          </div>
+
+          <!-- Pro Plan (Popular) -->
+          <div class="bg-gradient-to-br from-accent to-accent-light rounded-2xl p-8 border-2 border-accent transform scale-105 shadow-2xl relative">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <span class="bg-yellow-400 text-primary px-4 py-1 rounded-full text-xs font-bold">
+                MOST POPULAR
+              </span>
+            </div>
+            
+            <div class="mb-6">
+              <h3 class="text-2xl font-bold text-white mb-2">Professional</h3>
+              <div class="flex items-baseline mb-2">
+                <span class="text-5xl font-bold text-white monthly-price">$199</span>
+                <span class="text-5xl font-bold text-white annual-price hidden">$159</span>
+                <span class="text-white/80 ml-2">/month</span>
+              </div>
+              <p class="text-white/80">For growing businesses</p>
+            </div>
+            
+            <ul class="space-y-3 mb-8 text-sm">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-white mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-white">15 AI Agents</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-white mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-white">100,000 actions/month</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-white mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-white">All 12+ industries</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-white mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-white">Custom agent builder</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-white mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-white">24/7 chat support</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-white mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-white">50 integrations</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-white mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-white">99.9% SLA</span>
+              </li>
+            </ul>
+            
+            <button onclick="selectPlan('pro')" class="w-full bg-white text-accent hover:bg-gray-100 py-3 rounded-xl font-semibold transition-all shadow-lg">
+              Start 14-Day Trial
+            </button>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="bg-surface rounded-2xl p-8 border-2 border-gray-200 hover:border-accent/30 transition-all">
+            <div class="mb-6">
+              <h3 class="text-2xl font-bold text-primary mb-2">Enterprise</h3>
+              <div class="flex items-baseline mb-2">
+                <span class="text-5xl font-bold text-primary">Custom</span>
+              </div>
+              <p class="text-muted">For large organizations</p>
+            </div>
+            
+            <ul class="space-y-3 mb-8 text-sm">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">Unlimited AI Agents</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">Unlimited actions</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">Custom integrations</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">Dedicated account manager</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">White-label options</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">On-premise deployment</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-muted">99.99% SLA</span>
+              </li>
+            </ul>
+            
+            <button onclick="selectPlan('enterprise')" class="w-full bg-primary text-white hover:bg-secondary py-3 rounded-xl font-semibold transition-all">
+              Contact Sales
+            </button>
+          </div>
+        </div>
+
+        <!-- Feature Comparison Table -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+          <h3 class="text-2xl font-bold text-primary mb-8 text-center">Full Feature Comparison</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="border-b-2 border-gray-200">
+                  <th class="text-left py-4 px-4 text-muted font-semibold">Features</th>
+                  <th class="text-center py-4 px-4 text-muted font-semibold">Free</th>
+                  <th class="text-center py-4 px-4 text-muted font-semibold">Starter</th>
+                  <th class="text-center py-4 px-4 text-accent font-semibold">Professional</th>
+                  <th class="text-center py-4 px-4 text-muted font-semibold">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm">
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 px-4 text-muted">AI Agents</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">2</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">5</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">15</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">Unlimited</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 px-4 text-muted">Actions per month</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">1,000</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">10,000</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">100,000</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">Unlimited</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 px-4 text-muted">Industry Templates</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">3</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">8</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">12+</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">All</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 px-4 text-muted">Integrations</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">2</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">10</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">50</td>
+                  <td class="py-4 px-4 text-center text-primary font-semibold">Unlimited</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 px-4 text-muted">Custom Agent Builder</td>
+                  <td class="py-4 px-4 text-center">
+                    <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                  </td>
+                  <td class="py-4 px-4 text-center">
+                    <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                  </td>
+                  <td class="py-4 px-4 text-center">
+                    <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                  <td class="py-4 px-4 text-center">
+                    <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 px-4 text-muted">API Access</td>
+                  <td class="py-4 px-4 text-center text-primary">Limited</td>
+                  <td class="py-4 px-4 text-center">
+                    <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                  <td class="py-4 px-4 text-center">
+                    <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                  <td class="py-4 px-4 text-center">
+                    <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 px-4 text-muted">Support</td>
+                  <td class="py-4 px-4 text-center text-primary">Email</td>
+                  <td class="py-4 px-4 text-center text-primary">Priority Email</td>
+                  <td class="py-4 px-4 text-center text-primary">24/7 Chat</td>
+                  <td class="py-4 px-4 text-center text-primary">Dedicated Manager</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 px-4 text-muted">SLA</td>
+                  <td class="py-4 px-4 text-center text-primary">-</td>
+                  <td class="py-4 px-4 text-center text-primary">99.5%</td>
+                  <td class="py-4 px-4 text-center text-primary">99.9%</td>
+                  <td class="py-4 px-4 text-center text-primary">99.99%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Add-ons Section -->
+        <div class="mt-16">
+          <h3 class="text-2xl font-bold text-primary mb-8 text-center">Power-ups & Add-ons</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-surface rounded-xl p-6 border border-gray-200">
+              <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h4 class="font-bold text-primary mb-2">Additional Agent Slots</h4>
+              <p class="text-muted text-sm mb-4">Add more agents to any plan</p>
+              <p class="text-2xl font-bold text-accent mb-2">$20<span class="text-sm text-muted">/agent/month</span></p>
+            </div>
+            
+            <div class="bg-surface rounded-xl p-6 border border-gray-200">
+              <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+              </div>
+              <h4 class="font-bold text-primary mb-2">Premium Analytics</h4>
+              <p class="text-muted text-sm mb-4">Advanced dashboards & insights</p>
+              <p class="text-2xl font-bold text-accent mb-2">$149<span class="text-sm text-muted">/month</span></p>
+            </div>
+            
+            <div class="bg-surface rounded-xl p-6 border border-gray-200">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+              </div>
+              <h4 class="font-bold text-primary mb-2">Custom Model Training</h4>
+              <p class="text-muted text-sm mb-4">Train agents on your data</p>
+              <p class="text-2xl font-bold text-accent mb-2">Starting at $2,000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section id="get-started" class="py-20 bg-gradient-to-br from-primary via-secondary to-primary relative overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent-light rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-12">
+          <span class="inline-block bg-accent/20 text-accent-light px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-accent-light/30">
+            Launch in Minutes
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            Get Started with ArjunAi
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Deploy intelligent AI agents in 3 simple steps. No credit card required for free tier.
+          </p>
+        </div>
+
+        <!-- Steps -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">
+              1
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Choose Your Plan</h3>
+            <p class="text-gray-300">Select the plan that fits your needs</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-accent-light rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">
+              2
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Connect Your Data</h3>
+            <p class="text-gray-300">Integrate with your existing tools</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">
+              3
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Deploy & Automate</h3>
+            <p class="text-gray-300">Your agents start working immediately</p>
+          </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-2xl mx-auto">
+          <form id="signupForm" class="space-y-6">
+            <!-- Plan Selector -->
+            <div>
+              <label class="block text-white font-semibold mb-2">Select Your Plan</label>
+              <select id="planSelector" class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all backdrop-blur-sm">
+                <option value="free" class="text-primary">Free - Get Started ($0/month)</option>
+                <option value="starter" class="text-primary">Starter - 14-Day Trial ($49/month)</option>
+                <option value="pro" class="text-primary" selected>Professional - 14-Day Trial ($199/month)</option>
+                <option value="enterprise" class="text-primary">Enterprise - Contact Sales (Custom)</option>
+              </select>
+            </div>
+
+            <!-- Form Fields -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <input type="text" placeholder="First Name" required class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all backdrop-blur-sm">
+              </div>
+              <div>
+                <input type="text" placeholder="Last Name" required class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all backdrop-blur-sm">
+              </div>
+            </div>
+
+            <div>
+              <input type="email" placeholder="Work Email" required class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all backdrop-blur-sm">
+            </div>
+
+            <div>
+              <input type="text" placeholder="Company Name" required class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all backdrop-blur-sm">
+            </div>
+
+            <div>
+              <select class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all backdrop-blur-sm">
+                <option value="" class="text-primary">Company Size</option>
+                <option value="1-10" class="text-primary">1-10 employees</option>
+                <option value="11-50" class="text-primary">11-50 employees</option>
+                <option value="51-200" class="text-primary">51-200 employees</option>
+                <option value="201-500" class="text-primary">201-500 employees</option>
+                <option value="501+" class="text-primary">501+ employees</option>
+              </select>
+            </div>
+
+            <div>
+              <select class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all backdrop-blur-sm">
+                <option value="" class="text-primary">Primary Industry</option>
+                <option value="cdp" class="text-primary">CDP & Marketing</option>
+                <option value="healthcare" class="text-primary">Healthcare</option>
+                <option value="finance" class="text-primary">Financial Services</option>
+                <option value="ecommerce" class="text-primary">E-commerce</option>
+                <option value="manufacturing" class="text-primary">Manufacturing</option>
+                <option value="education" class="text-primary">Education</option>
+                <option value="hospitality" class="text-primary">Hospitality</option>
+                <option value="other" class="text-primary">Other</option>
+              </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="button" onclick="showIndustryPopup()" class="w-full bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-white font-bold py-4 rounded-xl transition-all transform hover:scale-105 shadow-2xl">
+              <span class="flex items-center justify-center">
+                <span id="submitText">Start Your Free Trial</span>
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </span>
+            </button>
+
+            <p class="text-gray-300 text-sm text-center">
+              No credit card required for Free and Trial plans • Cancel anytime
+            </p>
+          </form>
+        </div>
+
+        <!-- What You Get -->
+        <div class="mt-16 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <h3 class="text-2xl font-bold text-white mb-6 text-center">What You Get Immediately</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-accent-light flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <div>
+                <p class="text-white font-semibold">Instant Access</p>
+                <p class="text-gray-400 text-sm">Start using agents immediately after signup</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-accent-light flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <div>
+                <p class="text-white font-semibold">Pre-built Templates</p>
+                <p class="text-gray-400 text-sm">Industry-specific workflows ready to deploy</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-accent-light flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <div>
+                <p class="text-white font-semibold">Live Dashboard</p>
+                <p class="text-gray-400 text-sm">Monitor performance in real-time</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-accent-light flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <div>
+                <p class="text-white font-semibold">Onboarding Support</p>
+                <p class="text-gray-400 text-sm">Guided setup with our team</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-accent-light flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <div>
+                <p class="text-white font-semibold">500+ Integrations</p>
+                <p class="text-gray-400 text-sm">Connect with your existing tools</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-accent-light flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <div>
+                <p class="text-white font-semibold">Cancel Anytime</p>
+                <p class="text-gray-400 text-sm">No long-term contracts required</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Mini Section -->
+        <div class="mt-16">
+          <h3 class="text-2xl font-bold text-white mb-8 text-center">Frequently Asked Questions</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <h4 class="font-bold text-white mb-2">Do I need technical knowledge?</h4>
+              <p class="text-gray-300 text-sm">No! Our drag-and-drop interface requires zero coding. Setup is intuitive and guided.</p>
+            </div>
+            
+            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <h4 class="font-bold text-white mb-2">How quickly can I deploy?</h4>
+              <p class="text-gray-300 text-sm">Most agents are live within 5-15 minutes. Our templates make deployment instant.</p>
+            </div>
+            
+            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <h4 class="font-bold text-white mb-2">Can I cancel anytime?</h4>
+              <p class="text-gray-300 text-sm">Yes, absolutely. No contracts, no cancellation fees. Cancel with one click.</p>
+            </div>
+            
+            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <h4 class="font-bold text-white mb-2">Is my data secure?</h4>
+              <p class="text-gray-300 text-sm">Bank-level encryption, SOC 2 certified, GDPR compliant. Your data is fully protected.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto">
+          <div class="text-center">
+            <div class="text-3xl mb-2">🔒</div>
+            <p class="text-white font-semibold">SOC 2 Certified</p>
+            <p class="text-gray-400 text-sm">Enterprise Security</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl mb-2">⚡</div>
+            <p class="text-white font-semibold">5 Min Setup</p>
+            <p class="text-gray-400 text-sm">Quick Integration</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl mb-2">🌍</div>
+            <p class="text-white font-semibold">GDPR Compliant</p>
+            <p class="text-gray-400 text-sm">Data Privacy</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl mb-2">💬</div>
+            <p class="text-white font-semibold">24/7 Support</p>
+            <p class="text-gray-400 text-sm">Always Here to Help</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Details Sections -->
+    <!-- AI Agents Section -->
+    <section id="ai-agents" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">AI Agents</h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">Intelligent agents that automate complex business processes across all domains with human-like reasoning and decision-making capabilities.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-2xl font-bold text-primary mb-4">Autonomous Intelligence</h3>
+            <p class="text-muted mb-6">Our AI agents operate independently, learning from your data patterns and making intelligent decisions without constant supervision.</p>
+            <ul class="space-y-3 text-muted">
+              <li class="flex items-center"><span class="w-2 h-2 bg-accent rounded-full mr-3"></span>24/7 autonomous operation</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-accent rounded-full mr-3"></span>Cross-domain intelligence</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-accent rounded-full mr-3"></span>Real-time adaptation</li>
+            </ul>
+          </div>
+          <div class="bg-gradient-to-br from-accent/10 to-accent-light/10 rounded-2xl p-8">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-primary mb-2">Smart Automation</h4>
+              <p class="text-muted">Deploy intelligent agents that understand context and make decisions like your best employees.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section id="insights" class="py-20 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">Insights</h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">Transform raw data into actionable insights with AI-powered analytics that reveal hidden patterns and predict future trends.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-primary mb-2">Predictive Analytics</h4>
+              <p class="text-muted">Forecast trends and identify opportunities before your competitors do.</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-primary mb-4">Data-Driven Decisions</h3>
+            <p class="text-muted mb-6">Our insights engine processes millions of data points to deliver clear, actionable recommendations for your business.</p>
+            <ul class="space-y-3 text-muted">
+              <li class="flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>Real-time data processing</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>Predictive modeling</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>Custom dashboards</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section id="analytics" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">Analytics</h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">Advanced analytics platform that provides deep insights into customer behavior, operational efficiency, and business performance.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-2xl font-bold text-primary mb-4">Advanced Metrics</h3>
+            <p class="text-muted mb-6">Track key performance indicators across all business functions with our comprehensive analytics suite.</p>
+            <ul class="space-y-3 text-muted">
+              <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Multi-dimensional analysis</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Custom reporting</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Performance benchmarking</li>
+            </ul>
+          </div>
+          <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-primary mb-2">Business Intelligence</h4>
+              <p class="text-muted">Comprehensive analytics that drive strategic decision-making across your organization.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section id="integrations" class="py-20 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">Integrations</h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">Seamlessly connect with your existing tools and platforms through our extensive integration ecosystem.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-primary mb-2">Universal Connectivity</h4>
+              <p class="text-muted">Connect with 500+ popular business tools and platforms instantly.</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-primary mb-4">Seamless Integration</h3>
+            <p class="text-muted mb-6">Our platform integrates with your existing tech stack, ensuring smooth data flow and unified operations.</p>
+            <ul class="space-y-3 text-muted">
+              <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>API-first architecture</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Pre-built connectors</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Real-time sync</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+              About ArjunAi
+            </h2>
+            <p class="text-xl text-muted mb-6 leading-relaxed">
+              ArjunAi is pioneering the future of intelligent automation with plug-and-play AI agents that seamlessly integrate into any business environment.
+            </p>
+            <p class="text-lg text-muted mb-8 leading-relaxed">
+              Our mission is to democratize AI by making sophisticated intelligent agents accessible to businesses of all sizes. We believe AI should empower society, not replace it.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white rounded-xl p-6 shadow-lg">
+                <div class="text-3xl font-bold text-accent mb-2">12+</div>
+                <div class="text-muted">Industry-Specific Agents</div>
+              </div>
+              <div class="bg-white rounded-xl p-6 shadow-lg">
+                <div class="text-3xl font-bold text-accent mb-2">100%</div>
+                <div class="text-muted">Plug-and-Play Ready</div>
+              </div>
+              <div class="bg-white rounded-xl p-6 shadow-lg">
+                <div class="text-3xl font-bold text-accent mb-2">24/7</div>
+                <div class="text-muted">Autonomous Operation</div>
+              </div>
+              <div class="bg-white rounded-xl p-6 shadow-lg">
+                <div class="text-3xl font-bold text-accent mb-2">∞</div>
+                <div class="text-muted">Scalable Intelligence</div>
+              </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button class="bg-accent hover:bg-accent-light text-white px-8 py-3 rounded-full font-semibold transition-colors">
+                Learn More
+              </button>
+              <button class="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-3 rounded-full font-semibold transition-colors">
+                Our Story
+              </button>
+            </div>
+          </div>
+          
+          <div class="relative">
+            <div class="bg-gradient-to-br from-accent/10 to-accent-light/10 rounded-2xl p-8">
+              <div class="space-y-6">
+                <div class="flex items-center space-x-4">
+                  <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-primary">AI for Good</h3>
+                    <p class="text-muted">Ethical AI development that empowers society</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                  <div class="w-12 h-12 bg-accent-light rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-primary">Enterprise Ready</h3>
+                    <p class="text-muted">Built for scale, security, and reliability</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                  <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-primary">Cross-Domain</h3>
+                    <p class="text-muted">Unified intelligence across all business functions</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                  <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-primary">Innovation First</h3>
+                    <p class="text-muted">Cutting-edge technology with human-centered design</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Career Section -->
+    <section id="careers" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+            Join Our Team
+          </h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">
+            Help us build the future of AI. We're looking for passionate individuals who want to make a meaningful impact.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          <!-- Job 1 -->
+          <div class="bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-primary">AI Engineer</h3>
+                <p class="text-muted">Full-time • Remote</p>
+              </div>
+            </div>
+            <p class="text-muted mb-6">Build and deploy intelligent AI agents across multiple domains. Work with cutting-edge ML technologies.</p>
+            <button class="bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-full font-semibold transition-colors w-full">
+              Apply Now
+            </button>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-primary">Product Manager</h3>
+                <p class="text-muted">Full-time • Hybrid</p>
+              </div>
+            </div>
+            <p class="text-muted mb-6">Lead product strategy for AI agents. Define roadmaps and work with cross-functional teams.</p>
+            <button class="bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-full font-semibold transition-colors w-full">
+              Apply Now
+            </button>
+          </div>
+
+          <!-- Job 3 -->
+          <div class="bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-primary">Sales Engineer</h3>
+                <p class="text-muted">Full-time • Remote</p>
+              </div>
+            </div>
+            <p class="text-muted mb-6">Drive enterprise sales and help customers implement AI solutions. Technical sales expertise required.</p>
+            <button class="bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-full font-semibold transition-colors w-full">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-lg text-muted mb-6">Don't see a role that fits? We're always looking for exceptional talent.</p>
+          <button class="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-3 rounded-full font-semibold transition-colors">
+            Send Us Your Resume
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+            Contact Us
+          </h2>
+          <p class="text-xl text-muted max-w-3xl mx-auto">
+            Get in touch with our team. We're here to help you succeed with AI automation.
+          </p>
+        </div>
+
+        <div class="max-w-2xl mx-auto">
+          <div class="space-y-8">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-primary mb-1">Address</h4>
+                <p class="text-muted">Bengaluru, India</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-primary mb-1">Email</h4>
+                <p class="text-muted"><a href="mailto:contact@arjunai.ai" class="hover:text-accent transition-colors">contact@arjunai.ai</a></p>
+                <p class="text-muted"><a href="mailto:sales@arjunai.ai" class="hover:text-accent transition-colors">sales@arjunai.ai</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Section -->
+<section id="privacy" class="py-20 bg-surface">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+        Privacy Policy
+      </h2>
+      <p class="text-xl text-muted">
+        Your privacy is important to us. Learn how we collect, use, and protect your data.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-2xl p-8 shadow-lg space-y-8">
+      <div>
+        <h3 class="text-2xl font-bold text-primary mb-4">Data Collection</h3>
+        <p class="text-muted leading-relaxed">
+          We collect information you provide directly, such as when you create an account, use our services, or contact us. This includes name, email, company information, and usage data to improve our AI agents.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-bold text-primary mb-4">How We Use Your Data</h3>
+        <ul class="text-muted space-y-2">
+          <li>• Provide and improve our AI agent services</li>
+          <li>• Personalize your experience and recommendations</li>
+          <li>• Communicate with you about updates and support</li>
+          <li>• Ensure security and prevent fraud</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-bold text-primary mb-4">Data Security</h3>
+        <p class="text-muted leading-relaxed">
+          We implement industry-standard security measures including encryption, access controls, and regular security audits to protect your data. All data is processed in compliance with GDPR and other applicable regulations.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-bold text-primary mb-4">Your Rights</h3>
+        <p class="text-muted leading-relaxed">
+          You have the right to access, update, delete, or export your data. You can also opt-out of communications and request data portability. Contact us at <a href="mailto:privacy@arjunai.ai" class="text-accent hover:underline">privacy@arjunai.ai</a> for any privacy-related requests.
+        </p>
+      </div>
+
+      <div class="border-t pt-6">
+        <p class="text-sm text-muted">
+          Last updated: January 2025. We may update this policy periodically. Continued use of our services constitutes acceptance of any changes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-enterprise via-primary to-secondary text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div class="col-span-1 md:col-span-2">
+            <div class="flex items-center space-x-4 mb-6">
+              <img src="assets/logo.png" alt="ArjunAi Logo" class="h-14 w-14 rounded-2xl shadow-xl">
+              <span class="text-3xl font-black bg-gradient-to-r from-white to-accent-light bg-clip-text text-transparent">ArjunAi</span>
+            </div>
+            <p class="text-gray-300 mb-6 max-w-md text-lg leading-relaxed">
+              Empowering enterprises with next-generation AI agents that revolutionize operations, accelerate decision-making, and drive unprecedented growth.
+            </p>
+            <div class="text-gray-300 text-base mb-6 space-y-2">
+              <p class="flex items-center"><span class="text-accent-light mr-3">📍</span> Bengaluru, India</p>
+              <p class="flex items-center"><span class="text-accent-light mr-3">📧</span> <a href="mailto:contact@arjunai.ai" class="hover:text-accent-light transition-colors">contact@arjunai.ai</a></p>
+              <p class="flex items-center"><span class="text-accent-light mr-3">💼</span> <a href="mailto:sales@arjunai.ai" class="hover:text-accent-light transition-colors">sales@arjunai.ai</a></p>
+            </div>
+            <div class="flex space-x-4">
+              <a href="https://linkedin.com/company/arjunai-ai" target="_blank" class="text-gray-400 hover:text-accent transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <a href="https://twitter.com/arjunaihq" target="_blank" class="text-gray-400 hover:text-accent transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Product</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#ai-agents" class="hover:text-white transition-colors">AI Agents</a></li>
+              <li><a href="#insights" class="hover:text-white transition-colors">Insights</a></li>
+              <li><a href="#analytics" class="hover:text-white transition-colors">Analytics</a></li>
+              <li><a href="#integrations" class="hover:text-white transition-colors">Integrations</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-400">
+              
+              <li><a href="#about" class="text-muted hover:text-primary transition-colors">About</a></li>
+              <li><a href="#careers" class="text-muted hover:text-primary transition-colors">Careers</a></li>
+              <li><a href="#contact" class="hover:text-white transition-colors">Contact Us</a></li>
+              <li><a href="#privacy" class="hover:text-white transition-colors">Privacy</a></li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-white/20 mt-12 pt-8 text-center">
+          <p class="text-gray-300 text-lg">&copy; 2025 ArjunAi. All rights reserved. Built for Enterprise Excellence.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal Background -->
+    <div id="requestModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+      <!-- Modal Content -->
+      <div id="modalContent" class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8 transform scale-90 transition-transform duration-300 opacity-0 relative">
+        <!-- Close Button -->
+        <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        
+        <div class="text-center mb-6">
+          <h3 class="text-2xl font-bold text-primary mb-2">Get Early Access</h3>
+          <p class="text-muted">Join the waitlist for exclusive early access to ArjunAi agents.</p>
+        </div>
+        
+        <form class="space-y-4">
+          <div>
+            <input type="text" placeholder="Full Name" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all">
+          </div>
+          <div>
+            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all">
+          </div>
+          <div>
+            <input type="text" placeholder="Company Name" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all">
+          </div>
+          <button type="submit" class="w-full bg-accent hover:bg-accent-light text-white font-semibold py-3 rounded-xl transition-colors">
+            Request Access
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Industry Selection Modal -->
+    <div id="industryModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+      <div id="industryModalContent" class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full mx-4 p-8 transform scale-90 transition-transform duration-300 opacity-0 relative">
+        <button id="closeIndustryModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        
+        <div class="text-center mb-8">
+          <h3 class="text-3xl font-bold text-primary mb-2">Choose Your Industry</h3>
+          <p class="text-muted">Select your industry to get the best AI agents for your business</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <button onclick="selectIndustry('cdp')" class="industry-btn p-4 border-2 border-gray-200 rounded-xl hover:border-accent hover:bg-accent/5 transition-all text-center">
+            <div class="text-2xl mb-2">📊</div>
+            <div class="font-semibold text-primary">CDP & Marketing</div>
+          </button>
+          <button onclick="selectIndustry('healthcare')" class="industry-btn p-4 border-2 border-gray-200 rounded-xl hover:border-accent hover:bg-accent/5 transition-all text-center">
+            <div class="text-2xl mb-2">🏥</div>
+            <div class="font-semibold text-primary">Healthcare</div>
+          </button>
+          <button onclick="selectIndustry('finance')" class="industry-btn p-4 border-2 border-gray-200 rounded-xl hover:border-accent hover:bg-accent/5 transition-all text-center">
+            <div class="text-2xl mb-2">💰</div>
+            <div class="font-semibold text-primary">Finance</div>
+          </button>
+          <button onclick="selectIndustry('ecommerce')" class="industry-btn p-4 border-2 border-gray-200 rounded-xl hover:border-accent hover:bg-accent/5 transition-all text-center">
+            <div class="text-2xl mb-2">🛒</div>
+            <div class="font-semibold text-primary">E-commerce</div>
+          </button>
+          <button onclick="selectIndustry('manufacturing')" class="industry-btn p-4 border-2 border-gray-200 rounded-xl hover:border-accent hover:bg-accent/5 transition-all text-center">
+            <div class="text-2xl mb-2">🏭</div>
+            <div class="font-semibold text-primary">Manufacturing</div>
+          </button>
+          <button onclick="selectIndustry('education')" class="industry-btn p-4 border-2 border-gray-200 rounded-xl hover:border-accent hover:bg-accent/5 transition-all text-center">
+            <div class="text-2xl mb-2">🎓</div>
+            <div class="font-semibold text-primary">Education</div>
+          </button>
+          <button onclick="selectIndustry('hospitality')" class="industry-btn p-4 border-2 border-gray-200 rounded-xl hover:border-accent hover:bg-accent/5 transition-all text-center">
+            <div class="text-2xl mb-2">🏨</div>
+            <div class="font-semibold text-primary">Hospitality</div>
+          </button>
+          <button onclick="selectIndustry('other')" class="industry-btn p-4 border-2 border-gray-200 rounded-xl hover:border-accent hover:bg-accent/5 transition-all text-center">
+            <div class="text-2xl mb-2">🔧</div>
+            <div class="font-semibold text-primary">Other</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+
+    <script>
+      // Industry popup functions
+      window.showIndustryPopup = function() {
+        const modal = document.getElementById('industryModal');
+        const modalContent = document.getElementById('industryModalContent');
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modalContent.classList.remove('opacity-0', 'scale-90');
+      };
+
+      window.selectIndustry = function(industry) {
+        const modal = document.getElementById('industryModal');
+        const modalContent = document.getElementById('industryModalContent');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modalContent.classList.add('opacity-0', 'scale-90');
+        
+        // Close video demo modal if open
+        const demoModal = document.getElementById('demoModal');
+        const demoModalContent = document.getElementById('demoModalContent');
+        if (demoModal && !demoModal.classList.contains('opacity-0')) {
+          demoModal.classList.add('opacity-0', 'pointer-events-none');
+          demoModalContent.classList.add('opacity-0', 'scale-90');
+        }
+        
+        setTimeout(() => {
+          const getStartedSection = document.getElementById('get-started');
+          if (getStartedSection) {
+            getStartedSection.scrollIntoView({ behavior: 'smooth' });
+            
+            setTimeout(() => {
+              const industrySelect = document.querySelector('select');
+              if (industrySelect && industrySelect.querySelector(`option[value="${industry}"]`)) {
+                industrySelect.value = industry;
+              }
+            }, 800);
+          }
+        }, 300);
+      };
+
+      // Close industry modal
+      const closeIndustryBtn = document.getElementById('closeIndustryModal');
+      const industryModal = document.getElementById('industryModal');
+      const industryModalContent = document.getElementById('industryModalContent');
+
+      if (closeIndustryBtn) {
+        closeIndustryBtn.addEventListener('click', () => {
+          industryModal.classList.add('opacity-0', 'pointer-events-none');
+          industryModalContent.classList.add('opacity-0', 'scale-90');
+        });
+      }
+
+      if (industryModal) {
+        industryModal.addEventListener('click', (e) => {
+          if (e.target === industryModal) {
+            industryModal.classList.add('opacity-0', 'pointer-events-none');
+            industryModalContent.classList.add('opacity-0', 'scale-90');
+          }
+        });
+      }
+
+      // Modal functionality
+      const openBtn = document.getElementById('openFormBtn');
+      const closeBtn = document.getElementById('closeModalBtn');
+      const modal = document.getElementById('requestModal');
+      const modalContent = document.getElementById('modalContent');
+
+      if (openBtn) {
+        openBtn.addEventListener('click', () => {
+          modal.classList.remove('opacity-0', 'pointer-events-none');
+          modalContent.classList.remove('opacity-0', 'scale-90');
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          modal.classList.add('opacity-0', 'pointer-events-none');
+          modalContent.classList.add('opacity-0', 'scale-90');
+        });
+      }
+
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalContent.classList.add('opacity-0', 'scale-90');
+          }
+        });
+      }
+
+      // Pricing toggle functionality
+      const monthlyBtn = document.getElementById('monthlyBtn');
+      const annualBtn = document.getElementById('annualBtn');
+      const monthlyPrices = document.querySelectorAll('.monthly-price');
+      const annualPrices = document.querySelectorAll('.annual-price');
+
+      if (monthlyBtn && annualBtn) {
+        monthlyBtn.addEventListener('click', () => {
+          monthlyBtn.classList.add('bg-accent', 'text-white');
+          monthlyBtn.classList.remove('text-muted');
+          annualBtn.classList.remove('bg-accent', 'text-white');
+          annualBtn.classList.add('text-muted');
+          
+          monthlyPrices.forEach(price => price.classList.remove('hidden'));
+          annualPrices.forEach(price => price.classList.add('hidden'));
+        });
+
+        annualBtn.addEventListener('click', () => {
+          annualBtn.classList.add('bg-accent', 'text-white');
+          annualBtn.classList.remove('text-muted');
+          monthlyBtn.classList.remove('bg-accent', 'text-white');
+          monthlyBtn.classList.add('text-muted');
+          
+          monthlyPrices.forEach(price => price.classList.add('hidden'));
+          annualPrices.forEach(price => price.classList.remove('hidden'));
+        });
+      }
+
+      // Plan selection function
+      window.selectPlan = function(plan) {
+        const getStartedSection = document.getElementById('get-started');
+        if (getStartedSection) {
+          getStartedSection.scrollIntoView({ behavior: 'smooth' });
+          
+          setTimeout(() => {
+            const planSelector = document.getElementById('planSelector');
+            if (planSelector) {
+              planSelector.value = plan;
+              
+              const submitText = document.getElementById('submitText');
+              if (submitText) {
+                if (plan === 'free') {
+                  submitText.textContent = 'Start Free Forever';
+                } else if (plan === 'enterprise') {
+                  submitText.textContent = 'Contact Sales Team';
+                } else {
+                  submitText.textContent = 'Start 14-Day Free Trial';
+                }
+              }
+              
+              planSelector.classList.add('ring-4', 'ring-accent');
+              setTimeout(() => {
+                planSelector.classList.remove('ring-4', 'ring-accent');
+              }, 2000);
+            }
+          }, 800);
+        }
+      };
+
+      // Update submit button based on plan selection
+      const planSelector = document.getElementById('planSelector');
+      if (planSelector) {
+        planSelector.addEventListener('change', (e) => {
+          const submitText = document.getElementById('submitText');
+          const plan = e.target.value;
+          
+          if (submitText) {
+            if (plan === 'free') {
+              submitText.textContent = 'Start Free Forever';
+            } else if (plan === 'enterprise') {
+              submitText.textContent = 'Contact Sales Team';
+            } else {
+              submitText.textContent = 'Start 14-Day Free Trial';
+            }
+          }
+        });
+      }
+
+      // Form submission
+      const signupForm = document.getElementById('signupForm');
+      if (signupForm) {
+        signupForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          const submitBtn = e.target.querySelector('button[type="submit"]');
+          const originalText = submitBtn.innerHTML;
+          
+          submitBtn.innerHTML = '<span class="flex items-center justify-center"><svg class="animate-spin h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Processing...</span>';
+          submitBtn.disabled = true;
+          
+          setTimeout(() => {
+            submitBtn.innerHTML = '<span class="flex items-center justify-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Success! Redirecting...</span>';
+            
+            setTimeout(() => {
+              alert('Welcome to ArjunAi! In production, you would be redirected to your dashboard.');
+              submitBtn.innerHTML = originalText;
+              submitBtn.disabled = false;
+            }, 2000);
+          }, 1500);
+        });
+      }
+
+      // Demo modal functionality
+      const openDemoBtn = document.getElementById('openDemoModal');
+      const closeDemoBtn = document.getElementById('closeDemoModal');
+      const demoModal = document.getElementById('demoModal');
+      const demoModalContent = document.getElementById('demoModalContent');
+
+      if (openDemoBtn && demoModal && demoModalContent) {
+        openDemoBtn.addEventListener('click', () => {
+          demoModal.classList.remove('opacity-0', 'pointer-events-none');
+          demoModalContent.classList.remove('opacity-0', 'scale-90');
+        });
+
+        closeDemoBtn.addEventListener('click', () => {
+          demoModal.classList.add('opacity-0', 'pointer-events-none');
+          demoModalContent.classList.add('opacity-0', 'scale-90');
+        });
+
+        demoModal.addEventListener('click', (e) => {
+          if (e.target === demoModal) {
+            demoModal.classList.add('opacity-0', 'pointer-events-none');
+            demoModalContent.classList.add('opacity-0', 'scale-90');
+          }
+        });
+      }
+
+
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    </script>
 
   </body>
 </html>
