@@ -76,4 +76,4 @@ Our unified platform connects AI agents through a centralized intelligence layer
 
 ---
 
-*Built with ❤️ by Agrim & Arjun to shape a future where AI empowers society.*
+*Built to shape a future where AI empowers society.*
