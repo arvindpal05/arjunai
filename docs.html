@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArjunAi Documentation - API Reference & Developer Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'inter': ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'primary': '#1a1a2e',
+              'secondary': '#16213e',
+              'accent': '#0f3460',
+              'accent-light': '#e94560',
+              'surface': '#f5f7fa',
+              'muted': '#6b7280',
+              'enterprise': '#0f172a',
+              'professional': '#1e40af',
+              'success': '#059669',
+              'warning': '#d97706',
+              'neutral': '#374151'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="font-inter bg-gradient-to-br from-surface via-white to-surface text-primary">
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-18">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="ArjunAi Logo" class="h-12 w-12 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <span class="text-2xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">ArjunAi Docs</span>
+                </div>
+                <a href="index.html" class="text-neutral hover:text-accent transition-all duration-200 font-medium">← Back to Main Site</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <nav class="w-64 bg-gradient-to-b from-white to-surface border-r border-gray-100 min-h-screen p-6 sticky top-18">
+            <div class="space-y-6">
+                <div>
+                    <h3 class="font-bold text-primary mb-3">Getting Started</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#overview" class="text-neutral hover:text-accent transition-colors font-medium">Overview</a></li>
+                        <li><a href="#executive-architecture" class="text-muted hover:text-accent transition-colors">Executive Overview</a></li>
+                        <li><a href="#architecture" class="text-muted hover:text-accent transition-colors">Technical Architecture</a></li>
+                        <li><a href="#cross-domain-architecture" class="text-muted hover:text-accent transition-colors">Cross-Domain Architecture</a></li>
+                        <li><a href="#data-control-plane" class="text-muted hover:text-accent transition-colors">Data & Control Plane</a></li>
+                        <li><a href="#authentication" class="text-muted hover:text-accent transition-colors">Authentication</a></li>
+                        <li><a href="#quick-start" class="text-muted hover:text-accent transition-colors">Quick Start</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary mb-3">API Reference</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#agents-api" class="text-neutral hover:text-accent transition-colors font-medium">Agents API</a></li>
+                        <li><a href="#data-api" class="text-muted hover:text-accent transition-colors">Data API</a></li>
+                        <li><a href="#insights-api" class="text-muted hover:text-accent transition-colors">Insights API</a></li>
+                        <li><a href="#webhooks" class="text-muted hover:text-accent transition-colors">Webhooks</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary mb-3">SDKs</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#javascript-sdk" class="text-neutral hover:text-accent transition-colors font-medium">JavaScript SDK</a></li>
+                        <li><a href="#python-sdk" class="text-muted hover:text-accent transition-colors">Python SDK</a></li>
+                        <li><a href="#rest-api" class="text-muted hover:text-accent transition-colors">REST API</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary mb-3">Guides</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#integration-guide" class="text-neutral hover:text-accent transition-colors font-medium">Integration Guide</a></li>
+                        <li><a href="#best-practices" class="text-muted hover:text-accent transition-colors">Best Practices</a></li>
+                        <li><a href="#troubleshooting" class="text-muted hover:text-accent transition-colors">Troubleshooting</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8 max-w-4xl">
+            <!-- Overview -->
+            <section id="overview" class="mb-16">
+                <h1 class="text-5xl font-black bg-gradient-to-r from-primary to-professional bg-clip-text text-transparent mb-8">ArjunAi API Documentation</h1>
+                <p class="text-2xl text-neutral mb-8 leading-relaxed">Build intelligent applications with our comprehensive AI agent platform. Deploy, manage, and scale AI agents across any industry with our powerful APIs.</p>
+                
+                <div class="bg-gradient-to-r from-accent/10 to-professional/10 border border-accent/30 rounded-2xl p-8 mb-8 shadow-lg">
+                    <h3 class="font-bold text-accent mb-3 text-lg">Base URL</h3>
+                    <code class="bg-white px-4 py-2 rounded-lg text-base font-mono shadow-sm">https://api.arjunai.ai/v1</code>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-shadow">
+                        <h3 class="font-bold text-primary mb-3 text-lg">12+ Industries</h3>
+                        <p class="text-neutral leading-relaxed">Pre-built agents for healthcare, finance, e-commerce, and more</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-shadow">
+                        <h3 class="font-bold text-primary mb-3 text-lg">99.9% Uptime</h3>
+                        <p class="text-neutral leading-relaxed">Enterprise-grade reliability with global infrastructure</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-shadow">
+                        <h3 class="font-bold text-primary mb-3 text-lg">Real-time</h3>
+                        <p class="text-neutral leading-relaxed">Instant responses with WebSocket and webhook support</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Architecture Diagram -->
+            <section id="architecture" class="mb-16">
+                <h2 class="text-4xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-8">Platform Architecture</h2>
+                <p class="text-xl text-neutral mb-8 leading-relaxed">Understanding how ArjunAi processes data and delivers intelligent insights across your organization.</p>
+                
+                <div class="bg-white rounded-2xl p-10 border border-gray-100 mb-8 shadow-xl">
+                    <svg viewBox="0 0 800 600" class="w-full h-auto">
+                        <!-- Background -->
+                        <rect width="800" height="600" fill="#f8fafc"/>
+                        
+                        <!-- Client Layer -->
+                        <rect x="50" y="50" width="700" height="80" fill="#3b82f6" rx="8"/>
+                        <text x="400" y="95" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Client Applications</text>
+                        
+                        <!-- Client boxes -->
+                        <rect x="80" y="160" width="120" height="60" fill="#60a5fa" rx="6"/>
+                        <text x="140" y="195" text-anchor="middle" fill="white" font-size="12">Web Apps</text>
+                        
+                        <rect x="220" y="160" width="120" height="60" fill="#60a5fa" rx="6"/>
+                        <text x="280" y="195" text-anchor="middle" fill="white" font-size="12">Mobile Apps</text>
+                        
+                        <rect x="360" y="160" width="120" height="60" fill="#60a5fa" rx="6"/>
+                        <text x="420" y="195" text-anchor="middle" fill="white" font-size="12">Backend APIs</text>
+                        
+                        <rect x="500" y="160" width="120" height="60" fill="#60a5fa" rx="6"/>
+                        <text x="560" y="195" text-anchor="middle" fill="white" font-size="12">SDKs</text>
+                        
+                        <rect x="640" y="160" width="120" height="60" fill="#60a5fa" rx="6"/>
+                        <text x="700" y="195" text-anchor="middle" fill="white" font-size="12">Webhooks</text>
+                        
+                        <!-- API Gateway -->
+                        <rect x="50" y="260" width="700" height="60" fill="#10b981" rx="8"/>
+                        <text x="400" y="295" text-anchor="middle" fill="white" font-size="16" font-weight="bold">API Gateway & Authentication</text>
+                        
+                        <!-- Core Services -->
+                        <rect x="50" y="360" width="700" height="80" fill="#f59e0b" rx="8"/>
+                        <text x="400" y="405" text-anchor="middle" fill="white" font-size="18" font-weight="bold">ArjunAi Core Platform</text>
+                        
+                        <!-- Service boxes -->
+                        <rect x="80" y="470" width="130" height="60" fill="#fbbf24" rx="6"/>
+                        <text x="145" y="500" text-anchor="middle" fill="white" font-size="10">Agent</text>
+                        <text x="145" y="515" text-anchor="middle" fill="white" font-size="10">Manager</text>
+                        
+                        <rect x="230" y="470" width="130" height="60" fill="#fbbf24" rx="6"/>
+                        <text x="295" y="500" text-anchor="middle" fill="white" font-size="10">Data</text>
+                        <text x="295" y="515" text-anchor="middle" fill="white" font-size="10">Processor</text>
+                        
+                        <rect x="380" y="470" width="130" height="60" fill="#fbbf24" rx="6"/>
+                        <text x="445" y="500" text-anchor="middle" fill="white" font-size="10">AI</text>
+                        <text x="445" y="515" text-anchor="middle" fill="white" font-size="10">Engine</text>
+                        
+                        <rect x="530" y="470" width="130" height="60" fill="#fbbf24" rx="6"/>
+                        <text x="595" y="505" text-anchor="middle" fill="white" font-size="11">Analytics</text>
+                        
+                        <!-- Data Layer -->
+                        <rect x="50" y="560" width="700" height="30" fill="#6b7280" rx="8"/>
+                        <text x="400" y="580" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Secure Data Storage & Processing</text>
+                        
+                        <!-- Arrows -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+                            </marker>
+                        </defs>
+                        
+                        <!-- Vertical arrows -->
+                        <line x1="400" y1="130" x2="400" y2="150" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        <line x1="400" y1="230" x2="400" y2="250" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        <line x1="400" y1="330" x2="400" y2="350" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        <line x1="400" y1="450" x2="400" y2="460" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        <line x1="400" y1="540" x2="400" y2="550" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        
+                        <!-- Side labels -->
+                        <text x="10" y="90" fill="#374151" font-size="11" font-weight="bold">Layer 1</text>
+                        <text x="10" y="190" fill="#374151" font-size="11" font-weight="bold">Layer 2</text>
+                        <text x="10" y="290" fill="#374151" font-size="11" font-weight="bold">Layer 3</text>
+                        <text x="10" y="400" fill="#374151" font-size="11" font-weight="bold">Layer 4</text>
+                        <text x="10" y="575" fill="#374151" font-size="11" font-weight="bold">Layer 5</text>
+                    </svg>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg">
+                        <h3 class="font-bold text-primary mb-4 text-lg">🔄 Data Flow</h3>
+                        <ol class="text-muted space-y-2 text-sm">
+                            <li>1. Client sends request via API/SDK</li>
+                            <li>2. API Gateway authenticates & routes</li>
+                            <li>3. Agent Manager selects appropriate AI agent</li>
+                            <li>4. AI Engine processes data intelligently</li>
+                            <li>5. Results returned with insights & actions</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg">
+                        <h3 class="font-bold text-primary mb-4 text-lg">⚡ Key Features</h3>
+                        <ul class="text-muted space-y-2 text-sm">
+                            <li>• Auto-scaling based on demand</li>
+                            <li>• Multi-region deployment</li>
+                            <li>• Real-time processing</li>
+                            <li>• Enterprise security</li>
+                            <li>• Industry-specific optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Executive Architecture -->
+            <section id="executive-architecture" class="mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-6">Executive Overview: Plug-and-Play AI</h2>
+                <p class="text-xl text-muted mb-6">Simple, powerful AI deployment that transforms your business operations in minutes, not months.</p>
+                
+                <div class="bg-gradient-to-br from-accent/5 to-accent-light/5 rounded-xl p-8 border border-accent/20 mb-8">
+                    <svg viewBox="0 0 900 500" class="w-full h-auto">
+                        <!-- Background -->
+                        <rect width="900" height="500" fill="#ffffff"/>
+                        
+                        <!-- Title -->
+                        <text x="450" y="30" text-anchor="middle" fill="#0F172A" font-size="20" font-weight="bold">ArjunAi: From Business Challenge to AI Solution in 3 Steps</text>
+                        
+                        <!-- Step 1: Business Challenge -->
+                        <rect x="50" y="80" width="200" height="120" fill="#ef4444" rx="12"/>
+                        <text x="150" y="110" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Business Challenge</text>
+                        <text x="150" y="135" text-anchor="middle" fill="white" font-size="12">• Manual processes</text>
+                        <text x="150" y="155" text-anchor="middle" fill="white" font-size="12">• Data silos</text>
+                        <text x="150" y="175" text-anchor="middle" fill="white" font-size="12">• Slow decisions</text>
+                        
+                        <!-- Arrow 1 -->
+                        <path d="M 270 140 L 320 140" stroke="#374151" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+                        <text x="295" y="130" text-anchor="middle" fill="#374151" font-size="12" font-weight="bold">5 MIN</text>
+                        
+                        <!-- Step 2: ArjunAi Platform -->
+                        <rect x="340" y="60" width="220" height="160" fill="#3b82f6" rx="12"/>
+                        <text x="450" y="90" text-anchor="middle" fill="white" font-size="16" font-weight="bold">ArjunAi Platform</text>
+                        
+                        <!-- Sub-components -->
+                        <rect x="360" y="110" width="80" height="30" fill="#60a5fa" rx="6"/>
+                        <text x="400" y="130" text-anchor="middle" fill="white" font-size="10">Select Agent</text>
+                        
+                        <rect x="460" y="110" width="80" height="30" fill="#60a5fa" rx="6"/>
+                        <text x="500" y="130" text-anchor="middle" fill="white" font-size="10">Connect Data</text>
+                        
+                        <rect x="360" y="160" width="80" height="30" fill="#60a5fa" rx="6"/>
+                        <text x="400" y="180" text-anchor="middle" fill="white" font-size="10">Configure</text>
+                        
+                        <rect x="460" y="160" width="80" height="30" fill="#60a5fa" rx="6"/>
+                        <text x="500" y="180" text-anchor="middle" fill="white" font-size="10">Deploy</text>
+                        
+                        <!-- Arrow 2 -->
+                        <path d="M 580 140 L 630 140" stroke="#374151" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+                        <text x="605" y="130" text-anchor="middle" fill="#374151" font-size="12" font-weight="bold">INSTANT</text>
+                        
+                        <!-- Step 3: Business Value -->
+                        <rect x="650" y="80" width="200" height="120" fill="#10b981" rx="12"/>
+                        <text x="750" y="110" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Business Value</text>
+                        <text x="750" y="135" text-anchor="middle" fill="white" font-size="12">• 80% faster decisions</text>
+                        <text x="750" y="155" text-anchor="middle" fill="white" font-size="12">• 60% cost reduction</text>
+                        <text x="750" y="175" text-anchor="middle" fill="white" font-size="12">• 24/7 automation</text>
+                        
+                        <!-- Industry Examples -->
+                        <text x="450" y="260" text-anchor="middle" fill="#374151" font-size="16" font-weight="bold">Industry Examples</text>
+                        
+                        <!-- Healthcare -->
+                        <rect x="80" y="290" width="140" height="80" fill="#f59e0b" rx="8"/>
+                        <text x="150" y="315" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Healthcare</text>
+                        <text x="150" y="335" text-anchor="middle" fill="white" font-size="10">Patient data analysis</text>
+                        <text x="150" y="350" text-anchor="middle" fill="white" font-size="10">Treatment recommendations</text>
+                        
+                        <!-- Finance -->
+                        <rect x="240" y="290" width="140" height="80" fill="#8b5cf6" rx="8"/>
+                        <text x="310" y="315" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Finance</text>
+                        <text x="310" y="335" text-anchor="middle" fill="white" font-size="10">Risk assessment</text>
+                        <text x="310" y="350" text-anchor="middle" fill="white" font-size="10">Fraud detection</text>
+                        
+                        <!-- E-commerce -->
+                        <rect x="400" y="290" width="140" height="80" fill="#06b6d4" rx="8"/>
+                        <text x="470" y="315" text-anchor="middle" fill="white" font-size="14" font-weight="bold">E-commerce</text>
+                        <text x="470" y="335" text-anchor="middle" fill="white" font-size="10">Customer insights</text>
+                        <text x="470" y="350" text-anchor="middle" fill="white" font-size="10">Personalization</text>
+                        
+                        <!-- Manufacturing -->
+                        <rect x="560" y="290" width="140" height="80" fill="#84cc16" rx="8"/>
+                        <text x="630" y="315" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Manufacturing</text>
+                        <text x="630" y="335" text-anchor="middle" fill="white" font-size="10">Quality control</text>
+                        <text x="630" y="350" text-anchor="middle" fill="white" font-size="10">Predictive maintenance</text>
+                        
+                        <!-- ROI Metrics -->
+                        <rect x="720" y="290" width="140" height="80" fill="#ec4899" rx="8"/>
+                        <text x="790" y="315" text-anchor="middle" fill="white" font-size="14" font-weight="bold">ROI Metrics</text>
+                        <text x="790" y="335" text-anchor="middle" fill="white" font-size="10">3-6 month payback</text>
+                        <text x="790" y="350" text-anchor="middle" fill="white" font-size="10">300%+ ROI typical</text>
+                        
+                        <!-- Key Benefits -->
+                        <text x="450" y="420" text-anchor="middle" fill="#374151" font-size="16" font-weight="bold">Executive Benefits</text>
+                        
+                        <circle cx="150" cy="450" r="30" fill="#3b82f6"/>
+                        <text x="150" y="455" text-anchor="middle" fill="white" font-size="10" font-weight="bold">NO CODE</text>
+                        
+                        <circle cx="300" cy="450" r="30" fill="#10b981"/>
+                        <text x="300" y="455" text-anchor="middle" fill="white" font-size="10" font-weight="bold">INSTANT</text>
+                        
+                        <circle cx="450" cy="450" r="30" fill="#f59e0b"/>
+                        <text x="450" y="455" text-anchor="middle" fill="white" font-size="10" font-weight="bold">SECURE</text>
+                        
+                        <circle cx="600" cy="450" r="30" fill="#8b5cf6"/>
+                        <text x="600" y="455" text-anchor="middle" fill="white" font-size="10" font-weight="bold">SCALABLE</text>
+                        
+                        <circle cx="750" cy="450" r="30" fill="#ef4444"/>
+                        <text x="750" y="455" text-anchor="middle" fill="white" font-size="10" font-weight="bold">PROVEN</text>
+                        
+                        <!-- Arrow marker -->
+                        <defs>
+                            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                                <path d="M0,0 L0,6 L9,3 z" fill="#374151"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 text-center">
+                        <div class="text-3xl font-bold text-accent mb-2">5 Minutes</div>
+                        <div class="text-muted">From signup to first AI agent deployed</div>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 text-center">
+                        <div class="text-3xl font-bold text-green-600 mb-2">80% Faster</div>
+                        <div class="text-muted">Decision making with real-time insights</div>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 text-center">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">300% ROI</div>
+                        <div class="text-muted">Typical return on investment within 6 months</div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <h3 class="font-semibold text-primary mb-4">🎯 Executive Value Proposition</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-medium text-primary mb-2">Immediate Impact</h4>
+                            <ul class="text-muted space-y-1 text-sm">
+                                <li>• Deploy in minutes, not months</li>
+                                <li>• No technical team required</li>
+                                <li>• Instant business value</li>
+                                <li>• Risk-free trial period</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-primary mb-2">Strategic Advantage</h4>
+                            <ul class="text-muted space-y-1 text-sm">
+                                <li>• Industry-leading AI technology</li>
+                                <li>• Enterprise-grade security</li>
+                                <li>• Scalable across all departments</li>
+                                <li>• Competitive differentiation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cross-Domain Architecture -->
+            <section id="cross-domain-architecture" class="mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-6">Cross-Domain Intelligence Architecture</h2>
+                <p class="text-muted mb-6">ArjunAi's unified platform connects AI agents across 14+ industries through a centralized intelligence hub, enabling seamless cross-domain insights and automation.</p>
+                
+                <div class="bg-white rounded-xl p-8 border border-gray-200 mb-6">
+                    <svg viewBox="0 0 1200 800" class="w-full h-auto">
+                        <!-- Background -->
+                        <rect width="1200" height="800" fill="#f8fafc"/>
+                        
+                        <!-- Title -->
+                        <text x="600" y="40" text-anchor="middle" fill="#0F172A" font-size="22" font-weight="bold">ArjunAi Cross-Domain Intelligence Platform</text>
+                        
+                        <!-- Central Intelligence Hub -->
+                        <circle cx="600" cy="400" r="120" fill="#3b82f6" stroke="#1e40af" stroke-width="4"/>
+                        <text x="600" y="385" text-anchor="middle" fill="white" font-size="16" font-weight="bold">ArjunAi</text>
+                        <text x="600" y="405" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Intelligence</text>
+                        <text x="600" y="425" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Hub</text>
+                        
+                        <!-- Domain Circles -->
+                        <!-- Healthcare -->
+                        <circle cx="300" cy="200" r="75" fill="#1a1a2e" stroke="#16213e" stroke-width="3"/>
+                        <text x="300" y="190" text-anchor="middle" fill="white" font-size="24" font-weight="bold">+</text>
+                        <text x="300" y="215" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Healthcare</text>
+                        
+                        <!-- Finance -->
+                        <circle cx="900" cy="200" r="75" fill="#0f3460" stroke="#1a1a2e" stroke-width="3"/>
+                        <text x="900" y="190" text-anchor="middle" fill="white" font-size="24" font-weight="bold">$</text>
+                        <text x="900" y="215" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Finance</text>
+                        
+                        <!-- E-commerce -->
+                        <circle cx="150" cy="400" r="75" fill="#e94560" stroke="#1a1a2e" stroke-width="3"/>
+                        <text x="150" y="390" text-anchor="middle" fill="white" font-size="24" font-weight="bold">🛍</text>
+                        <text x="150" y="415" text-anchor="middle" fill="white" font-size="12" font-weight="bold">E-commerce</text>
+                        
+                        <!-- Manufacturing -->
+                        <circle cx="1050" cy="400" r="75" fill="#16213e" stroke="#0f3460" stroke-width="3"/>
+                        <text x="1050" y="390" text-anchor="middle" fill="white" font-size="24" font-weight="bold">⚙</text>
+                        <text x="1050" y="415" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Manufacturing</text>
+                        
+                        <!-- Education -->
+                        <circle cx="300" cy="600" r="75" fill="#0f172a" stroke="#1e40af" stroke-width="3"/>
+                        <text x="300" y="590" text-anchor="middle" fill="white" font-size="24" font-weight="bold">📚</text>
+                        <text x="300" y="615" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Education</text>
+                        
+                        <!-- Hospitality -->
+                        <circle cx="900" cy="600" r="75" fill="#1e40af" stroke="#0f172a" stroke-width="3"/>
+                        <text x="900" y="590" text-anchor="middle" fill="white" font-size="24" font-weight="bold">🏨</text>
+                        <text x="900" y="615" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Hospitality</text>
+                        
+                        <!-- CDP & Marketing -->
+                        <circle cx="450" cy="150" r="65" fill="#059669" stroke="#16213e" stroke-width="3"/>
+                        <text x="450" y="140" text-anchor="middle" fill="white" font-size="20" font-weight="bold">📈</text>
+                        <text x="450" y="165" text-anchor="middle" fill="white" font-size="10" font-weight="bold">CDP Marketing</text>
+                        
+                        <!-- Legal & Compliance -->
+                        <circle cx="750" cy="150" r="65" fill="#d97706" stroke="#1a1a2e" stroke-width="3"/>
+                        <text x="750" y="140" text-anchor="middle" fill="white" font-size="20" font-weight="bold">⚖</text>
+                        <text x="750" y="165" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Legal</text>
+                        
+                        <!-- Real Estate -->
+                        <circle cx="450" cy="650" r="65" fill="#374151" stroke="#0f3460" stroke-width="3"/>
+                        <text x="450" y="640" text-anchor="middle" fill="white" font-size="20" font-weight="bold">🏢</text>
+                        <text x="450" y="665" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Real Estate</text>
+                        
+                        <!-- Logistics -->
+                        <circle cx="750" cy="650" r="65" fill="#0f3460" stroke="#e94560" stroke-width="3"/>
+                        <text x="750" y="640" text-anchor="middle" fill="white" font-size="20" font-weight="bold">🚛</text>
+                        <text x="750" y="665" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Logistics</text>
+                        
+                        <!-- Energy & Utilities -->
+                        <circle cx="100" cy="250" r="55" fill="#d97706" stroke="#1a1a2e" stroke-width="3"/>
+                        <text x="100" y="240" text-anchor="middle" fill="white" font-size="18" font-weight="bold">⚡</text>
+                        <text x="100" y="265" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Energy</text>
+                        
+                        <!-- Agriculture -->
+                        <circle cx="1100" cy="250" r="55" fill="#059669" stroke="#16213e" stroke-width="3"/>
+                        <text x="1100" y="240" text-anchor="middle" fill="white" font-size="18" font-weight="bold">🌱</text>
+                        <text x="1100" y="265" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Agriculture</text>
+                        
+                        <!-- Media & Entertainment -->
+                        <circle cx="100" cy="550" r="55" fill="#e94560" stroke="#1a1a2e" stroke-width="3"/>
+                        <text x="100" y="540" text-anchor="middle" fill="white" font-size="18" font-weight="bold">🎭</text>
+                        <text x="100" y="565" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Media</text>
+                        
+                        <!-- Government -->
+                        <circle cx="1100" cy="550" r="55" fill="#374151" stroke="#0f3460" stroke-width="3"/>
+                        <text x="1100" y="540" text-anchor="middle" fill="white" font-size="18" font-weight="bold">🏛</text>
+                        <text x="1100" y="565" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Government</text>
+                        
+                        <!-- Connection Lines -->
+                        <defs>
+                            <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+                            </marker>
+                        </defs>
+                        
+                        <!-- Lines from center to domains -->
+                        <line x1="525" y1="325" x2="375" y2="200" stroke="#3b82f6" stroke-width="3" opacity="0.7"/>
+                        <line x1="675" y1="325" x2="825" y2="200" stroke="#3b82f6" stroke-width="3" opacity="0.7"/>
+                        <line x1="480" y1="400" x2="225" y2="400" stroke="#3b82f6" stroke-width="3" opacity="0.7"/>
+                        <line x1="720" y1="400" x2="975" y2="400" stroke="#3b82f6" stroke-width="3" opacity="0.7"/>
+                        <line x1="525" y1="475" x2="375" y2="600" stroke="#3b82f6" stroke-width="3" opacity="0.7"/>
+                        <line x1="675" y1="475" x2="825" y2="600" stroke="#3b82f6" stroke-width="3" opacity="0.7"/>
+                        <line x1="545" y1="335" x2="485" y2="215" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+                        <line x1="655" y1="335" x2="715" y2="215" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+                        <line x1="545" y1="465" x2="485" y2="585" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+                        <line x1="655" y1="465" x2="715" y2="585" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+                        <line x1="510" y1="350" x2="155" y2="250" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
+                        <line x1="690" y1="350" x2="1045" y2="250" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
+                        <line x1="510" y1="450" x2="155" y2="550" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
+                        <line x1="690" y1="450" x2="1045" y2="550" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
+                        
+                        <!-- Data Flow Indicators -->
+                        <circle cx="400" cy="260" r="6" fill="#60a5fa" opacity="0.8">
+                            <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="800" cy="260" r="6" fill="#60a5fa" opacity="0.8">
+                            <animate attributeName="r" values="6;10;6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="400" cy="540" r="6" fill="#60a5fa" opacity="0.8">
+                            <animate attributeName="r" values="6;10;6" dur="2s" begin="1s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="800" cy="540" r="6" fill="#60a5fa" opacity="0.8">
+                            <animate attributeName="r" values="6;10;6" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- Key Features -->
+                        <rect x="50" y="720" width="1100" height="60" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" rx="8"/>
+                        <text x="600" y="740" text-anchor="middle" fill="#334155" font-size="14" font-weight="bold">Unified Intelligence Across All Industries</text>
+                        <text x="200" y="760" text-anchor="middle" fill="#64748b" font-size="11">Real-time Processing</text>
+                        <text x="400" y="760" text-anchor="middle" fill="#64748b" font-size="11">Cross-Domain Insights</text>
+                        <text x="600" y="760" text-anchor="middle" fill="#64748b" font-size="11">Scalable Architecture</text>
+                        <text x="800" y="760" text-anchor="middle" fill="#64748b" font-size="11">Enterprise Security</text>
+                        <text x="1000" y="760" text-anchor="middle" fill="#64748b" font-size="11">Industry Compliance</text>
+                    </svg>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-blue-50 rounded-xl p-4 border border-blue-200">
+                        <h3 class="font-semibold text-blue-800 mb-2">🏥 Core Industries</h3>
+                        <ul class="text-blue-700 text-sm space-y-1">
+                            <li>• Healthcare & Life Sciences</li>
+                            <li>• Financial Services & Banking</li>
+                            <li>• E-commerce & Retail</li>
+                            <li>• Manufacturing & Supply Chain</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+                        <h3 class="font-semibold text-green-800 mb-2">🎓 Service Industries</h3>
+                        <ul class="text-green-700 text-sm space-y-1">
+                            <li>• Education & Training</li>
+                            <li>• Hospitality & Tourism</li>
+                            <li>• Real Estate & Property</li>
+                            <li>• Legal & Compliance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-purple-50 rounded-xl p-4 border border-purple-200">
+                        <h3 class="font-semibold text-purple-800 mb-2">📊 Specialized Domains</h3>
+                        <ul class="text-purple-700 text-sm space-y-1">
+                            <li>• CDP & Digital Marketing</li>
+                            <li>• Logistics & Transportation</li>
+                            <li>• Energy & Utilities</li>
+                            <li>• Agriculture & Food Tech</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-orange-50 rounded-xl p-4 border border-orange-200">
+                        <h3 class="font-semibold text-orange-800 mb-2">🏛️ Public Sector</h3>
+                        <ul class="text-orange-700 text-sm space-y-1">
+                            <li>• Government & Public Services</li>
+                            <li>• Media & Entertainment</li>
+                            <li>• Non-profit Organizations</li>
+                            <li>• Research Institutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data & Control Plane Architecture -->
+            <section id="data-control-plane" class="mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-6">Data & Control Plane Architecture</h2>
+                <p class="text-muted mb-6">Understanding how your data flows through ArjunAi's secure, compliant infrastructure with clear separation of control and data planes.</p>
+                
+                <div class="bg-white rounded-xl p-8 border border-gray-200 mb-6">
+                    <svg viewBox="0 0 1000 750" class="w-full h-auto">
+                        <!-- Background -->
+                        <rect width="1000" height="750" fill="#f8fafc"/>
+                        
+                        <!-- Title -->
+                        <text x="500" y="30" text-anchor="middle" fill="#0F172A" font-size="18" font-weight="bold">ArjunAi Data & Control Plane Separation</text>
+                        
+                        <!-- Client Environment -->
+                        <rect x="50" y="60" width="900" height="130" fill="#e5e7eb" stroke="#6b7280" stroke-width="2" rx="8"/>
+                        <text x="500" y="85" text-anchor="middle" fill="#374151" font-size="14" font-weight="bold">Client Environment (Your Infrastructure)</text>
+                        
+                        <!-- Client Data Sources -->
+                        <rect x="80" y="110" width="110" height="60" fill="#3b82f6" rx="6"/>
+                        <text x="135" y="135" text-anchor="middle" fill="white" font-size="10">Your</text>
+                        <text x="135" y="150" text-anchor="middle" fill="white" font-size="10">Database</text>
+                        
+                        <rect x="210" y="110" width="110" height="60" fill="#3b82f6" rx="6"/>
+                        <text x="265" y="135" text-anchor="middle" fill="white" font-size="10">CRM</text>
+                        <text x="265" y="150" text-anchor="middle" fill="white" font-size="10">System</text>
+                        
+                        <rect x="340" y="110" width="110" height="60" fill="#3b82f6" rx="6"/>
+                        <text x="395" y="135" text-anchor="middle" fill="white" font-size="10">File</text>
+                        <text x="395" y="150" text-anchor="middle" fill="white" font-size="10">Storage</text>
+                        
+                        <rect x="470" y="110" width="110" height="60" fill="#3b82f6" rx="6"/>
+                        <text x="525" y="145" text-anchor="middle" fill="white" font-size="10">APIs</text>
+                        
+                        <rect x="600" y="110" width="110" height="60" fill="#10b981" rx="6"/>
+                        <text x="655" y="135" text-anchor="middle" fill="white" font-size="9">ArjunAi SDK</text>
+                        <text x="655" y="150" text-anchor="middle" fill="white" font-size="9">(Your Control)</text>
+                        
+                        <rect x="730" y="110" width="110" height="60" fill="#f59e0b" rx="6"/>
+                        <text x="785" y="135" text-anchor="middle" fill="white" font-size="9">Data Connector</text>
+                        <text x="785" y="150" text-anchor="middle" fill="white" font-size="9">(Encrypted)</text>
+                        
+                        <!-- Secure Connection -->
+                        <rect x="50" y="220" width="900" height="90" fill="#fef3c7" stroke="#f59e0b" stroke-width="3" stroke-dasharray="10,5" rx="8"/>
+                        <text x="500" y="245" text-anchor="middle" fill="#92400e" font-size="14" font-weight="bold">🔒 Encrypted TLS 1.3 Connection</text>
+                        <text x="500" y="265" text-anchor="middle" fill="#92400e" font-size="11">End-to-End Encryption • Zero-trust Architecture • SOC 2 Type II</text>
+                        <text x="500" y="285" text-anchor="middle" fill="#92400e" font-size="11">Client Data Ownership • Data Residency Options</text>
+                        
+                        <!-- ArjunAi Cloud Infrastructure -->
+                        <rect x="50" y="330" width="900" height="380" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="8"/>
+                        <text x="500" y="355" text-anchor="middle" fill="#1e40af" font-size="14" font-weight="bold">ArjunAi Cloud Infrastructure (AWS/Azure/GCP)</text>
+                        
+                        <!-- Control Plane -->
+                        <rect x="80" y="380" width="380" height="310" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+                        <text x="270" y="405" text-anchor="middle" fill="#6b21a8" font-size="13" font-weight="bold">Control Plane (Management)</text>
+                        
+                        <!-- Control Plane Components -->
+                        <rect x="100" y="420" width="140" height="35" fill="#8b5cf6" rx="6"/>
+                        <text x="170" y="442" text-anchor="middle" fill="white" font-size="10">Agent Orchestration</text>
+                        
+                        <rect x="260" y="420" width="140" height="35" fill="#8b5cf6" rx="6"/>
+                        <text x="330" y="442" text-anchor="middle" fill="white" font-size="10">Configuration Mgmt</text>
+                        
+                        <rect x="100" y="470" width="140" height="35" fill="#8b5cf6" rx="6"/>
+                        <text x="170" y="492" text-anchor="middle" fill="white" font-size="10">Authentication</text>
+                        
+                        <rect x="260" y="470" width="140" height="35" fill="#8b5cf6" rx="6"/>
+                        <text x="330" y="492" text-anchor="middle" fill="white" font-size="10">Monitoring & Logs</text>
+                        
+                        <rect x="100" y="520" width="140" height="35" fill="#8b5cf6" rx="6"/>
+                        <text x="170" y="542" text-anchor="middle" fill="white" font-size="10">API Gateway</text>
+                        
+                        <rect x="260" y="520" width="140" height="35" fill="#8b5cf6" rx="6"/>
+                        <text x="330" y="542" text-anchor="middle" fill="white" font-size="10">Billing & Usage</text>
+                        
+                        <rect x="180" y="570" width="120" height="35" fill="#a855f7" rx="6"/>
+                        <text x="240" y="592" text-anchor="middle" fill="white" font-size="10">Control Metadata</text>
+                        
+                        <rect x="180" y="620" width="120" height="35" fill="#7c3aed" rx="6"/>
+                        <text x="240" y="642" text-anchor="middle" fill="white" font-size="9">No Client Data</text>
+                        
+                        <!-- Data Plane -->
+                        <rect x="480" y="380" width="380" height="310" fill="#ecfdf5" stroke="#10b981" stroke-width="2" rx="8"/>
+                        <text x="670" y="405" text-anchor="middle" fill="#065f46" font-size="13" font-weight="bold">Data Plane (Processing)</text>
+                        
+                        <!-- Data Plane Components -->
+                        <rect x="500" y="420" width="140" height="35" fill="#10b981" rx="6"/>
+                        <text x="570" y="442" text-anchor="middle" fill="white" font-size="10">AI Processing Engine</text>
+                        
+                        <rect x="660" y="420" width="140" height="35" fill="#10b981" rx="6"/>
+                        <text x="730" y="442" text-anchor="middle" fill="white" font-size="10">Data Transformation</text>
+                        
+                        <rect x="500" y="470" width="140" height="35" fill="#10b981" rx="6"/>
+                        <text x="570" y="492" text-anchor="middle" fill="white" font-size="10">Secure Compute</text>
+                        
+                        <rect x="660" y="470" width="140" height="35" fill="#10b981" rx="6"/>
+                        <text x="730" y="492" text-anchor="middle" fill="white" font-size="10">Results Cache</text>
+                        
+                        <rect x="500" y="520" width="140" height="35" fill="#059669" rx="6"/>
+                        <text x="570" y="537" text-anchor="middle" fill="white" font-size="9">Encrypted Storage</text>
+                        <text x="570" y="550" text-anchor="middle" fill="white" font-size="9">(Temporary)</text>
+                        
+                        <rect x="660" y="520" width="140" height="35" fill="#059669" rx="6"/>
+                        <text x="730" y="537" text-anchor="middle" fill="white" font-size="9">Processing Queue</text>
+                        <text x="730" y="550" text-anchor="middle" fill="white" font-size="9">(Ephemeral)</text>
+                        
+                        <rect x="580" y="570" width="120" height="35" fill="#047857" rx="6"/>
+                        <text x="640" y="587" text-anchor="middle" fill="white" font-size="9">Client Data</text>
+                        <text x="640" y="600" text-anchor="middle" fill="white" font-size="9">(Your Ownership)</text>
+                        
+                        <rect x="580" y="620" width="120" height="35" fill="#065f46" rx="6"/>
+                        <text x="640" y="642" text-anchor="middle" fill="white" font-size="9">Auto-Purged 24h</text>
+                        
+                        <!-- Data Flow Arrows -->
+                        <defs>
+                            <marker id="dataArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#059669"/>
+                            </marker>
+                            <marker id="controlArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+                            </marker>
+                            <marker id="resultArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+                            </marker>
+                        </defs>
+                        
+                        <!-- Data flow -->
+                        <path d="M 600 210 L 670 370" stroke="#059669" stroke-width="3" fill="none" marker-end="url(#dataArrow)"/>
+                        <text x="635" y="290" fill="#059669" font-size="11" font-weight="bold">Your Data</text>
+                        
+                        <!-- Control flow -->
+                        <path d="M 400 210 L 270 370" stroke="#7c3aed" stroke-width="3" fill="none" marker-end="url(#controlArrow)"/>
+                        <text x="335" y="290" fill="#7c3aed" font-size="11" font-weight="bold">Control</text>
+                        
+                        <!-- Results flow -->
+                        <path d="M 670 370 L 600 210" stroke="#f59e0b" stroke-width="3" fill="none" marker-end="url(#resultArrow)"/>
+                        <text x="635" y="310" fill="#f59e0b" font-size="11" font-weight="bold">Results</text>
+                        
+                    </svg>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-purple-50 rounded-xl p-6 border border-purple-200">
+                        <h3 class="font-semibold text-purple-800 mb-3">🎛️ Control Plane</h3>
+                        <ul class="text-purple-700 space-y-2 text-sm">
+                            <li>• Agent configuration & deployment</li>
+                            <li>• Authentication & authorization</li>
+                            <li>• Monitoring & observability</li>
+                            <li>• API management & routing</li>
+                            <li>• Billing & usage tracking</li>
+                            <li>• No client data processed here</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 rounded-xl p-6 border border-green-200">
+                        <h3 class="font-semibold text-green-800 mb-3">📊 Data Plane</h3>
+                        <ul class="text-green-700 space-y-2 text-sm">
+                            <li>• Secure AI processing of your data</li>
+                            <li>• Encrypted storage (temporary only)</li>
+                            <li>• Zero-trust data handling</li>
+                            <li>• Automatic data purging</li>
+                            <li>• Client retains full ownership</li>
+                            <li>• Compliance with data regulations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 rounded-xl p-6 border border-blue-200 mb-6">
+                    <h3 class="font-semibold text-blue-800 mb-4">🔒 Data Security & Compliance</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-medium text-blue-800 mb-2">Data Ownership</h4>
+                            <ul class="text-blue-700 space-y-1 text-sm">
+                                <li>• You own your data 100%</li>
+                                <li>• Data residency options</li>
+                                <li>• Right to deletion</li>
+                                <li>• Export capabilities</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-blue-800 mb-2">Security Measures</h4>
+                            <ul class="text-blue-700 space-y-1 text-sm">
+                                <li>• End-to-end encryption</li>
+                                <li>• Zero-trust architecture</li>
+                                <li>• SOC 2 Type II certified</li>
+                                <li>• Regular security audits</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-blue-800 mb-2">Compliance</h4>
+                            <ul class="text-blue-700 space-y-1 text-sm">
+                                <li>• GDPR compliant</li>
+                                <li>• HIPAA ready</li>
+                                <li>• ISO 27001 aligned</li>
+                                <li>• Industry certifications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 rounded-xl p-6 border border-yellow-200">
+                    <h3 class="font-semibold text-yellow-800 mb-3">⚡ Data Processing Flow</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-yellow-600 text-white rounded-full flex items-center justify-center text-xs font-bold">1</div>
+                            <div>
+                                <p class="font-medium text-yellow-800">Data Ingestion</p>
+                                <p class="text-yellow-700 text-sm">Your data is encrypted and securely transmitted to ArjunAi's data plane</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-yellow-600 text-white rounded-full flex items-center justify-center text-xs font-bold">2</div>
+                            <div>
+                                <p class="font-medium text-yellow-800">AI Processing</p>
+                                <p class="text-yellow-700 text-sm">Data is processed in secure, isolated compute environments with no persistent storage</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-yellow-600 text-white rounded-full flex items-center justify-center text-xs font-bold">3</div>
+                            <div>
+                                <p class="font-medium text-yellow-800">Results Delivery</p>
+                                <p class="text-yellow-700 text-sm">AI insights are returned to you, and temporary data is automatically purged</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-yellow-600 text-white rounded-full flex items-center justify-center text-xs font-bold">4</div>
+                            <div>
+                                <p class="font-medium text-yellow-800">Data Cleanup</p>
+                                <p class="text-yellow-700 text-sm">All processing artifacts are securely deleted within 24 hours (configurable)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Authentication -->
+            <section id="authentication" class="mb-16">
+                <h2 class="text-4xl font-black bg-gradient-to-r from-primary to-professional bg-clip-text text-transparent mb-8">Authentication</h2>
+                <p class="text-xl text-neutral mb-8 leading-relaxed">ArjunAi uses API keys for authentication. Include your API key in the Authorization header of all requests.</p>
+                
+                <div class="bg-gradient-to-br from-enterprise to-primary rounded-2xl p-8 mb-8 shadow-xl">
+                    <pre class="text-green-400 text-base"><code>curl -H "Authorization: Bearer YOUR_API_KEY" \
+     -H "Content-Type: application/json" \
+     https://api.arjunai.ai/v1/agents</code></pre>
+                </div>
+
+                <div class="bg-gradient-to-r from-warning/10 to-warning/20 border border-warning/30 rounded-2xl p-6 shadow-lg">
+                    <p class="text-warning font-semibold"><strong>Security:</strong> Keep your API keys secure and never expose them in client-side code.</p>
+                </div>
+            </section>
+
+            <!-- Quick Start -->
+            <section id="quick-start" class="mb-16">
+                <h2 class="text-4xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-8">Quick Start</h2>
+                <p class="text-xl text-neutral mb-8 leading-relaxed">Get started with ArjunAi in under 5 minutes. Create your first AI agent and start processing data.</p>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">1. Create an Agent</h3>
+                        <div class="bg-gradient-to-br from-enterprise to-primary rounded-2xl p-8 shadow-lg">
+                            <pre class="text-green-400 text-sm"><code>POST /v1/agents
+{
+  "name": "Customer Support Agent",
+  "industry": "ecommerce",
+  "capabilities": ["chat", "sentiment_analysis", "ticket_routing"],
+  "config": {
+    "language": "en",
+    "response_time": "fast"
+  }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">2. Send Data</h3>
+                        <div class="bg-gradient-to-br from-enterprise to-primary rounded-2xl p-8 shadow-lg">
+                            <pre class="text-green-400 text-sm"><code>POST /v1/agents/{agent_id}/process
+{
+  "input": "Customer is asking about return policy",
+  "context": {
+    "customer_id": "12345",
+    "order_id": "ORD-789"
+  }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">3. Get Results</h3>
+                        <div class="bg-gradient-to-br from-enterprise to-primary rounded-2xl p-8 shadow-lg">
+                            <pre class="text-green-400 text-sm"><code>{
+  "response": "I can help you with our return policy...",
+  "confidence": 0.95,
+  "actions": [
+    {
+      "type": "create_ticket",
+      "priority": "medium"
+    }
+  ]
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Agents API -->
+            <section id="agents-api" class="mb-16">
+                <h2 class="text-4xl font-black bg-gradient-to-r from-primary to-professional bg-clip-text text-transparent mb-8">Agents API</h2>
+                <p class="text-xl text-neutral mb-8 leading-relaxed">Manage and deploy AI agents across different industries and use cases.</p>
+
+                <div class="space-y-8">
+                    <!-- Create Agent -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <span class="bg-gradient-to-r from-success to-success/80 text-white px-4 py-2 rounded-full text-sm font-bold mr-4 shadow-lg">POST</span>
+                            <code class="text-xl font-mono">/v1/agents</code>
+                        </div>
+                        <p class="text-neutral mb-6 text-lg leading-relaxed">Create a new AI agent with specified capabilities and configuration.</p>
+                        
+                        <h4 class="font-bold text-primary mb-4 text-lg">Parameters</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-gray-200">
+                                        <th class="text-left py-2">Parameter</th>
+                                        <th class="text-left py-2">Type</th>
+                                        <th class="text-left py-2">Required</th>
+                                        <th class="text-left py-2">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-muted">
+                                    <tr class="border-b border-gray-100">
+                                        <td class="py-2"><code>name</code></td>
+                                        <td>string</td>
+                                        <td>Yes</td>
+                                        <td>Agent display name</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100">
+                                        <td class="py-2"><code>industry</code></td>
+                                        <td>string</td>
+                                        <td>Yes</td>
+                                        <td>Target industry (healthcare, finance, etc.)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100">
+                                        <td class="py-2"><code>capabilities</code></td>
+                                        <td>array</td>
+                                        <td>Yes</td>
+                                        <td>List of agent capabilities</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- List Agents -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-3">GET</span>
+                            <code class="text-lg">/v1/agents</code>
+                        </div>
+                        <p class="text-muted mb-4">Retrieve a list of all your AI agents with their current status.</p>
+                        
+                        <h4 class="font-semibold text-primary mb-2">Query Parameters</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-gray-200">
+                                        <th class="text-left py-2">Parameter</th>
+                                        <th class="text-left py-2">Type</th>
+                                        <th class="text-left py-2">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-muted">
+                                    <tr class="border-b border-gray-100">
+                                        <td class="py-2"><code>industry</code></td>
+                                        <td>string</td>
+                                        <td>Filter by industry</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100">
+                                        <td class="py-2"><code>status</code></td>
+                                        <td>string</td>
+                                        <td>Filter by status (active, inactive)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data API -->
+            <section id="data-api" class="mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-6">Data API</h2>
+                <p class="text-muted mb-6">Send data to your agents for processing and analysis.</p>
+
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mr-3">POST</span>
+                        <code class="text-lg">/v1/agents/{agent_id}/process</code>
+                    </div>
+                    <p class="text-muted mb-4">Process data through a specific agent and receive intelligent responses.</p>
+                    
+                    <div class="bg-gray-900 rounded-xl p-6 mb-4">
+                        <pre class="text-green-400 text-sm"><code>{
+  "input": "Analyze customer feedback: 'Great product but shipping was slow'",
+  "context": {
+    "customer_id": "cust_123",
+    "product_id": "prod_456"
+  },
+  "options": {
+    "include_sentiment": true,
+    "generate_actions": true
+  }
+}</code></pre>
+                    </div>
+
+                    <h4 class="font-semibold text-primary mb-2">Response</h4>
+                    <div class="bg-gray-900 rounded-xl p-6">
+                        <pre class="text-green-400 text-sm"><code>{
+  "id": "proc_789",
+  "status": "completed",
+  "result": {
+    "analysis": "Positive product feedback with shipping concern",
+    "sentiment": {
+      "overall": "mixed",
+      "product": "positive",
+      "shipping": "negative"
+    },
+    "suggested_actions": [
+      {
+        "type": "improve_shipping",
+        "priority": "medium"
+      }
+    ]
+  },
+  "processing_time": 1.2
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Insights API -->
+            <section id="insights-api" class="mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-6">Insights API</h2>
+                <p class="text-muted mb-6">Generate business insights and analytics from your processed data.</p>
+
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-3">GET</span>
+                            <code class="text-lg">/v1/insights/trends</code>
+                        </div>
+                        <p class="text-muted">Get trending patterns and insights from your data.</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-3">GET</span>
+                            <code class="text-lg">/v1/insights/reports/{report_id}</code>
+                        </div>
+                        <p class="text-muted">Retrieve detailed analytics reports.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SDKs -->
+            <section id="javascript-sdk" class="mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-6">JavaScript SDK</h2>
+                <p class="text-muted mb-6">Official JavaScript SDK for seamless integration with web applications.</p>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Installation</h3>
+                        <div class="bg-gray-900 rounded-xl p-6">
+                            <pre class="text-green-400 text-sm"><code>npm install @arjunai/sdk</code></pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Usage</h3>
+                        <div class="bg-gray-900 rounded-xl p-6">
+                            <pre class="text-green-400 text-sm"><code>import { ArjunAI } from '@arjunai/sdk';
+
+const client = new ArjunAI({
+  apiKey: 'your-api-key'
+});
+
+// Create an agent
+const agent = await client.agents.create({
+  name: 'Support Bot',
+  industry: 'ecommerce'
+});
+
+// Process data
+const result = await client.process(agent.id, {
+  input: 'Customer needs help with order'
+});</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Python SDK -->
+            <section id="python-sdk" class="mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-6">Python SDK</h2>
+                <p class="text-muted mb-6">Official Python SDK for backend applications and data science workflows.</p>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Installation</h3>
+                        <div class="bg-gray-900 rounded-xl p-6">
+                            <pre class="text-green-400 text-sm"><code>pip install arjunai</code></pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Usage</h3>
+                        <div class="bg-gray-900 rounded-xl p-6">
+                            <pre class="text-green-400 text-sm"><code>from arjunai import ArjunAI
+
+client = ArjunAI(api_key="your-api-key")
+
+# Create agent
+agent = client.agents.create(
+    name="Data Analyzer",
+    industry="finance"
+)
+
+# Process data
+result = client.process(
+    agent_id=agent.id,
+    input="Analyze quarterly revenue trends"
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Best Practices -->
+            <section id="best-practices" class="mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-6">Best Practices</h2>
+                
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h3 class="font-semibold text-primary mb-3">🔒 Security</h3>
+                        <ul class="text-muted space-y-2">
+                            <li>• Store API keys securely using environment variables</li>
+                            <li>• Use HTTPS for all API requests</li>
+                            <li>• Implement proper error handling</li>
+                            <li>• Rotate API keys regularly</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h3 class="font-semibold text-primary mb-3">⚡ Performance</h3>
+                        <ul class="text-muted space-y-2">
+                            <li>• Batch requests when possible</li>
+                            <li>• Implement caching for frequently accessed data</li>
+                            <li>• Use webhooks for real-time updates</li>
+                            <li>• Monitor rate limits</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h3 class="font-semibold text-primary mb-3">📊 Data Quality</h3>
+                        <ul class="text-muted space-y-2">
+                            <li>• Validate input data before sending</li>
+                            <li>• Provide context for better results</li>
+                            <li>• Use structured data formats</li>
+                            <li>• Handle edge cases gracefully</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rate Limits -->
+            <section id="rate-limits" class="mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-6">Rate Limits</h2>
+                <p class="text-muted mb-6">API rate limits ensure fair usage and optimal performance for all users.</p>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full bg-white rounded-xl border border-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="text-left p-4 font-semibold text-primary">Plan</th>
+                                <th class="text-left p-4 font-semibold text-primary">Requests/Minute</th>
+                                <th class="text-left p-4 font-semibold text-primary">Requests/Day</th>
+                                <th class="text-left p-4 font-semibold text-primary">Concurrent Agents</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-muted">
+                            <tr class="border-t border-gray-100">
+                                <td class="p-4">Free</td>
+                                <td class="p-4">60</td>
+                                <td class="p-4">1,000</td>
+                                <td class="p-4">2</td>
+                            </tr>
+                            <tr class="border-t border-gray-100">
+                                <td class="p-4">Starter</td>
+                                <td class="p-4">300</td>
+                                <td class="p-4">10,000</td>
+                                <td class="p-4">5</td>
+                            </tr>
+                            <tr class="border-t border-gray-100">
+                                <td class="p-4">Professional</td>
+                                <td class="p-4">1,000</td>
+                                <td class="p-4">100,000</td>
+                                <td class="p-4">15</td>
+                            </tr>
+                            <tr class="border-t border-gray-100">
+                                <td class="p-4">Enterprise</td>
+                                <td class="p-4">Custom</td>
+                                <td class="p-4">Custom</td>
+                                <td class="p-4">Unlimited</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Support -->
+            <section id="support" class="mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-6">Support</h2>
+                <p class="text-muted mb-6">Get help when you need it with our comprehensive support options.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h3 class="font-semibold text-primary mb-3">📧 Email Support</h3>
+                        <p class="text-muted mb-3">Get detailed help via email</p>
+                        <a href="mailto:support@arjunai.ai" class="text-accent hover:text-accent-light">support@arjunai.ai</a>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h3 class="font-semibold text-primary mb-3">💬 Live Chat</h3>
+                        <p class="text-muted mb-3">Real-time support for urgent issues</p>
+                        <span class="text-muted">Available 24/7 for Pro+ plans</span>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h3 class="font-semibold text-primary mb-3">📚 Knowledge Base</h3>
+                        <p class="text-muted mb-3">Self-service articles and tutorials</p>
+                        <a href="#" class="text-accent hover:text-accent-light">Browse Articles</a>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h3 class="font-semibold text-primary mb-3">🔧 Status Page</h3>
+                        <p class="text-muted mb-3">Check API status and incidents</p>
+                        <a href="#" class="text-accent hover:text-accent-light">status.arjunai.ai</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-enterprise via-primary to-secondary text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div class="col-span-1 md:col-span-2">
+            <div class="flex items-center space-x-4 mb-6">
+              <img src="assets/logo.png" alt="ArjunAi Logo" class="h-14 w-14 rounded-2xl shadow-xl">
+              <span class="text-3xl font-black bg-gradient-to-r from-white to-accent-light bg-clip-text text-transparent">ArjunAi</span>
+            </div>
+            <p class="text-gray-300 mb-6 max-w-md text-lg leading-relaxed">
+              Empowering enterprises with next-generation AI agents that revolutionize operations, accelerate decision-making, and drive unprecedented growth.
+            </p>
+            <div class="text-gray-300 text-base mb-6 space-y-2">
+              <p class="flex items-center"><span class="text-accent-light mr-3">📍</span> Bengaluru, India</p>
+              <p class="flex items-center"><span class="text-accent-light mr-3">📧</span> <a href="mailto:contact@arjunai.ai" class="hover:text-accent-light transition-colors">contact@arjunai.ai</a></p>
+              <p class="flex items-center"><span class="text-accent-light mr-3">💼</span> <a href="mailto:sales@arjunai.ai" class="hover:text-accent-light transition-colors">sales@arjunai.ai</a></p>
+            </div>
+            <div class="flex space-x-4">
+              <a href="https://linkedin.com/company/arjunai-ai" target="_blank" class="text-gray-400 hover:text-accent transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <a href="https://twitter.com/arjunaihq" target="_blank" class="text-gray-400 hover:text-accent transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Product</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="index.html#agents" class="hover:text-white transition-colors">AI Agents</a></li>
+              <li><a href="index.html#insights" class="hover:text-white transition-colors">Insights</a></li>
+              <li><a href="index.html#analytics" class="hover:text-white transition-colors">Analytics</a></li>
+              <li><a href="index.html#integrations" class="hover:text-white transition-colors">Integrations</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="index.html#about" class="hover:text-white transition-colors">About</a></li>
+              <li><a href="index.html#careers" class="hover:text-white transition-colors">Careers</a></li>
+              <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact Us</a></li>
+              <li><a href="index.html#privacy" class="hover:text-white transition-colors">Privacy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-white/20 mt-12 pt-8 text-center">
+          <p class="text-gray-300 text-lg">&copy; 2025 ArjunAi. All rights reserved. Built for Enterprise Excellence.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
