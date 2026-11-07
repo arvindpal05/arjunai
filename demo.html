@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArjunAi – CDP Agent demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'sans-serif'] },
+          colors: {
+            primary: '#1a1a2e',
+            accent: '#0f3460',
+            'accent-light': '#e94560',
+            surface: '#f5f7fa',
+            muted: '#6b7280'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-inter bg-surface text-primary">
+  <header class="bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="ArjunAi" class="h-10 w-10 rounded-xl">
+        <span class="text-xl font-black">ArjunAi</span>
+      </a>
+      <a href="index.html" class="text-sm font-medium text-muted hover:text-accent">Back to site</a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <p class="text-xs font-semibold uppercase tracking-wide text-accent mb-2">In-browser demo</p>
+    <h1 class="text-4xl font-black mb-3">CDP Agent</h1>
+    <p class="text-muted max-w-3xl mb-4">This demo is attached to the site and runs in your browser on sample customers. It does not call an API, does not use a live model, and does not send the file anywhere.</p>
+    <div class="bg-amber-50 border border-amber-200 text-amber-950 text-sm rounded-xl px-4 py-3 mb-8">Sample retail data is loaded. Replace it with your own CSV if you want. Required columns: name, orders, days_since_order. Optional: customer_id, browsed, vip.</div>
+
+    <div class="flex flex-wrap gap-3 mb-8">
+      <button id="resetBtn" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold">Use sample data</button>
+      <label class="border border-accent text-accent px-4 py-2 rounded-lg text-sm font-semibold cursor-pointer">
+        Upload CSV
+        <input id="fileInput" type="file" accept=".csv,text/csv" class="hidden">
+      </label>
+      <button id="downloadBtn" class="border border-gray-300 px-4 py-2 rounded-lg text-sm font-semibold">Download sample CSV</button>
+      <span id="sourceLabel" class="self-center text-sm text-muted"></span>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-white rounded-2xl p-5 shadow-sm"><div id="statCustomers" class="text-3xl font-black text-accent">0</div><div class="text-sm text-muted">Customers</div></div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm"><div id="statIntent" class="text-3xl font-black text-accent">0</div><div class="text-sm text-muted">High intent</div></div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm"><div id="statChurn" class="text-3xl font-black text-accent">0</div><div class="text-sm text-muted">Churn risk</div></div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm"><div id="statVip" class="text-3xl font-black text-accent">0</div><div class="text-sm text-muted">VIP dormant</div></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+      <section class="bg-white rounded-2xl p-6 shadow-sm">
+        <h2 class="text-xl font-bold mb-4">Segments</h2>
+        <div id="segments" class="space-y-4"></div>
+      </section>
+      <section class="bg-white rounded-2xl p-6 shadow-sm">
+        <h2 class="text-xl font-bold mb-4">Insights</h2>
+        <ul id="insights" class="space-y-3 text-sm text-muted"></ul>
+      </section>
+    </div>
+
+    <section class="bg-white rounded-2xl p-6 shadow-sm mb-8 overflow-x-auto">
+      <h2 class="text-xl font-bold mb-4">Customers</h2>
+      <table class="w-full text-sm">
+        <thead class="text-left text-muted">
+          <tr><th class="py-2 pr-4">ID</th><th class="py-2 pr-4">Name</th><th class="py-2 pr-4">Orders</th><th class="py-2 pr-4">Days since order</th><th class="py-2 pr-4">Browsed</th><th class="py-2">VIP</th></tr>
+        </thead>
+        <tbody id="customerRows"></tbody>
+      </table>
+    </section>
+
+    <section class="bg-white rounded-2xl p-6 shadow-sm">
+      <h2 class="text-xl font-bold mb-2">Ask the agent</h2>
+      <p class="text-sm text-muted mb-4">Try the sample case, or type your own. The reply is a scripted demo based on the loaded customers.</p>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <button class="sample text-xs font-semibold bg-surface px-3 py-1 rounded-full" data-text="Customer 12345 asked about a return for order ORD-789. They are frustrated about shipping.">VIP return</button>
+        <button class="sample text-xs font-semibold bg-surface px-3 py-1 rounded-full" data-text="Who should we message this week for shoes?">Who to message</button>
+      </div>
+      <textarea id="prompt" rows="3" class="w-full border border-gray-200 rounded-xl p-3 text-sm" placeholder="Describe a customer case">Customer 12345 asked about a return for order ORD-789. They are frustrated about shipping.</textarea>
+      <button id="runBtn" type="button" class="mt-3 bg-accent text-white font-semibold px-5 py-2 rounded-lg">Run demo</button>
+      <div id="result" class="mt-5 border-2 border-accent rounded-xl p-4 bg-amber-50"></div>
+    </section>
+  </main>
+
+  <script>
+    const SAMPLE = [
+      { customer_id: "12345", name: "Anika Shah", orders: 8, days_since_order: 70, browsed: true, vip: true },
+      { customer_id: "12346", name: "Rahul Mehta", orders: 0, days_since_order: 2, browsed: true, vip: false },
+      { customer_id: "12347", name: "Priya Nair", orders: 0, days_since_order: 1, browsed: true, vip: false },
+      { customer_id: "12348", name: "Dev Kapoor", orders: 3, days_since_order: 80, browsed: false, vip: false },
+      { customer_id: "12349", name: "Sara Iqbal", orders: 5, days_since_order: 55, browsed: true, vip: true },
+      { customer_id: "12350", name: "Mohit Rao", orders: 1, days_since_order: 12, browsed: false, vip: false },
+      { customer_id: "12351", name: "Leena Das", orders: 0, days_since_order: 4, browsed: true, vip: false },
+      { customer_id: "12352", name: "Arun Gill", orders: 4, days_since_order: 90, browsed: false, vip: false }
+    ];
+
+    let customers = SAMPLE.slice();
+
+    function truthy(value) {
+      return ["1", "true", "yes", "y"].includes(String(value || "").trim().toLowerCase());
+    }
+
+    function num(value) {
+      const n = Number(String(value || "").replace(/[^0-9.]/g, ""));
+      return Number.isFinite(n) ? n : 0;
+    }
+
+    function parseCsv(text) {
+      const lines = text.trim().split(/\r?\n/).filter(Boolean);
+      if (lines.length < 2) throw new Error("CSV needs a header and at least one row.");
+      const headers = lines[0].split(",").map(h => h.trim().toLowerCase().replace(/\s+/g, "_"));
+      const pick = (row, names) => {
+        const index = headers.findIndex(h => names.includes(h));
+        return index >= 0 ? row[index] : "";
+      };
+      return lines.slice(1).map((line, i) => {
+        const row = line.split(",").map(cell => cell.trim());
+        return {
+          customer_id: pick(row, ["customer_id", "id"]) || String(1000 + i),
+          name: pick(row, ["name", "customer"]) || "Customer " + (i + 1),
+          orders: num(pick(row, ["orders", "order_count"])),
+          days_since_order: num(pick(row, ["days_since_order", "days", "recency"])),
+          browsed: truthy(pick(row, ["browsed", "browse", "high_intent"])),
+          vip: truthy(pick(row, ["vip"]))
+        };
+      });
+    }
+
+    function segmentsOf(rows) {
+      return {
+        intent: rows.filter(r => r.orders === 0 && r.browsed),
+        churn: rows.filter(r => r.orders > 0 && r.days_since_order >= 45 && !r.vip),
+        vip: rows.filter(r => r.vip && r.days_since_order >= 40)
+      };
+    }
+
+    function render(source) {
+      const segments = segmentsOf(customers);
+      document.getElementById("sourceLabel").textContent = source + " · " + customers.length + " rows";
+      document.getElementById("statCustomers").textContent = customers.length;
+      document.getElementById("statIntent").textContent = segments.intent.length;
+      document.getElementById("statChurn").textContent = segments.churn.length;
+      document.getElementById("statVip").textContent = segments.vip.length;
+
+      const cards = [
+        ["High intent / no purchase", segments.intent, "Browsed and has not ordered. First people to message."],
+        ["Churn risk", segments.churn, "Ordered before, quiet for 45 days or more, and not VIP."],
+        ["VIP dormant", segments.vip, "VIP customers quiet for 40 days or more."]
+      ];
+      document.getElementById("segments").innerHTML = cards.map(([title, rows, why]) => `
+        <div class="border border-gray-100 rounded-xl p-4">
+          <div class="flex justify-between items-baseline mb-1"><h3 class="font-bold">${title}</h3><span class="text-accent font-black">${rows.length}</span></div>
+          <p class="text-sm text-muted mb-2">${why}</p>
+          <p class="text-sm">${rows.map(r => r.name).join(", ") || "None in this file."}</p>
+        </div>`).join("");
+
+      const westNote = segments.vip.length ? segments.vip[0].name + " is a VIP who has gone quiet." : "No dormant VIPs in this file.";
+      document.getElementById("insights").innerHTML = [
+        segments.intent.length + " people browsed and did not buy. A short shoe offer is the first action to review.",
+        segments.churn.length + " past buyers have been quiet for 45 days or more.",
+        westNote + " Handle their next case before a discount email."
+      ].map(text => `<li class="bg-surface rounded-lg px-3 py-2">${text}</li>`).join("");
+
+      document.getElementById("customerRows").innerHTML = customers.map(r => `
+        <tr class="border-t border-gray-100">
+          <td class="py-2 pr-4">${r.customer_id}</td>
+          <td class="py-2 pr-4">${r.name}</td>
+          <td class="py-2 pr-4">${r.orders}</td>
+          <td class="py-2 pr-4">${r.days_since_order}</td>
+          <td class="py-2 pr-4">${r.browsed ? "Yes" : "No"}</td>
+          <td class="py-2">${r.vip ? "Yes" : "No"}</td>
+        </tr>`).join("");
+    }
+
+    function replyFor(text) {
+      const found = customers.find(r => text.includes(String(r.customer_id)));
+      const asksReturn = /return|shipping|refund/i.test(text);
+      const asksWho = /who|message|segment|campaign/i.test(text);
+      if (asksWho) {
+        const intent = segmentsOf(customers).intent;
+        return {
+          response: intent.length
+            ? "Message " + intent.map(r => r.name).join(", ") + " first. They browsed and have not purchased."
+            : "No high-intent browsers in this file. Review churn risk next.",
+          confidence: 0.86,
+          actions: [{ type: "review_segment", priority: "high", segment: "High intent / no purchase" }]
+        };
+      }
+      if (asksReturn) {
+        const vip = found ? found.vip : /vip/i.test(text);
+        return {
+          response: vip
+            ? "Thanks for writing. I can start a free return for that order and send a label today. A teammate will confirm the pickup window."
+            : "Thanks for writing. Returns are accepted within 30 days. I can open a ticket and email the return steps.",
+          confidence: found ? 0.93 : 0.74,
+          actions: [
+            { type: "create_ticket", priority: vip ? "high" : "medium" },
+            vip ? { type: "offer_return_label", priority: "high" } : { type: "send_policy", priority: "medium" }
+          ]
+        };
+      }
+      return {
+        response: "I can draft a segment or a customer reply from the loaded file. Mention a customer id, a return, or who to message.",
+        confidence: 0.55,
+        actions: [{ type: "ask_for_context", priority: "low" }]
+      };
+    }
+
+    function showResult(text) {
+      const prompt = document.getElementById("prompt");
+      const value = (text || prompt.value).trim() || "Customer 12345 asked about a return for order ORD-789. They are frustrated about shipping.";
+      prompt.value = value;
+      const result = replyFor(value);
+      const box = document.getElementById("result");
+      box.innerHTML = `
+        <p class="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Agent reply</p>
+        <p class="text-base font-medium mb-3">${result.response}</p>
+        <p class="text-xs text-muted mb-3">Demo confidence ${result.confidence}. This is a scripted reply, not a model score.</p>
+        <div class="flex flex-wrap gap-2">${result.actions.map(a => `<span class="text-xs bg-white border border-gray-200 rounded-full px-3 py-1">${a.type} · ${a.priority}</span>`).join("")}</div>`;
+      box.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    document.getElementById("runBtn").addEventListener("click", () => showResult());
+
+    document.querySelectorAll(".sample").forEach(button => {
+      button.addEventListener("click", () => {
+        showResult(button.dataset.text);
+      });
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      customers = SAMPLE.slice();
+      render("Sample data");
+    });
+
+    document.getElementById("fileInput").addEventListener("change", async (event) => {
+      const file = event.target.files[0];
+      if (!file) return;
+      try {
+        customers = parseCsv(await file.text());
+        render(file.name);
+      } catch (error) {
+        alert(error.message);
+      }
+    });
+
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const header = "customer_id,name,orders,days_since_order,browsed,vip";
+      const body = SAMPLE.map(r => [r.customer_id, r.name, r.orders, r.days_since_order, r.browsed, r.vip].join(",")).join("\n");
+      const blob = new Blob([header + "\n" + body + "\n"], { type: "text/csv" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "arjunai-sample-customers.csv";
+      link.click();
+    });
+
+    render("Sample data");
+    showResult();
+  </script>
+</body>
+</html>
