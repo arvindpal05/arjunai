@@ -2,78 +2,45 @@
 
 <div align="center">
   <img src="assets/logo.png" alt="ArjunAi Logo" style="height: 200px; width: auto;">
-  
-  **Transform your business with intelligent agents that understand, analyze, and act on your data automatically across all domains.**
-  
+
+  **Early access.** The first product in build is a CDP Agent for lifecycle marketers. This repository is the public website and the proposed API, not a running platform.
+
   [![Website](https://img.shields.io/badge/Website-arjunai.ai-blue)](https://arjunai.ai)
   [![Contact](https://img.shields.io/badge/Contact-contact%40arjunai.ai-green)](mailto:contact@arjunai.ai)
 </div>
 
-## 🚀 Overview
+## Status
 
-ArjunAi provides next-generation AI agents that seamlessly integrate into any business environment. Our cross-domain architecture enables intelligent automation across 12+ industries with zero-code deployment.
+| Claim | Current truth |
+|-------|----------------|
+| Product | Not generally available. Join the waitlist on the site. |
+| First agent | CDP Agent, in build |
+| Other industries | Roadmap only |
+| Data in | Customer file upload first. No 500-integration catalog. |
+| API | Design only. `https://api.arjunai.ai/v1` is not live. |
+| SDKs | Not published. Do not run `npm install @arjunai/sdk` or `pip install arjunai`. |
+| Security | Encryption and access control are design targets. Not SOC 2, HIPAA, or ISO 27001 certified. GDPR alignment is a launch target. |
+| SLA and ROI | Not measured. The site no longer states 99.9% uptime or a typical ROI. |
+| Pricing | Not final. Figures below are a draft, not an offer. |
 
-### ✨ Key Features
-- **12+ Industry-Specific Agents** - CDP, Healthcare, Finance, E-commerce, Manufacturing, Education & more
-- **Cross-Domain Intelligence** - Unified learning across all business functions
-- **Plug-and-Play Ready** - Deploy in minutes, not months
-- **500+ Integrations** - Connect with your existing tech stack
-- **Enterprise Security** - SOC 2 certified, GDPR compliant
+## What the first release is for
 
-## 🏗️ Architecture
+A lifecycle marketer uploads a customer file, sees segments and insights, and gets a suggested action for one case. That is the wedge. Healthcare, finance, and the other industry cards stay on the site as the later catalog.
 
-Our unified platform connects AI agents through a centralized intelligence layer:
+## Draft pricing
 
-- **Central Intelligence Hub** - Coordinates all agents and manages knowledge
-- **Cross-Domain Learning** - Agents share insights across industries
-- **Scalable Infrastructure** - Cloud-native architecture for enterprise scale
+Not for sale. Kept here so the earlier plan is visible.
 
-## 🎯 Use Cases
+| Plan | Draft price | Draft limits |
+|------|-------------|--------------|
+| Free | $0 | To be set with the first release |
+| Starter | $49 | To be set with the first release |
+| Professional | $199 | To be set with the first release |
+| Enterprise | Custom | Conversation only |
 
-### CDP & Marketing
-- Customer persona generation
-- Audience overlap analysis
-- Campaign optimization
-- Attribution insights
-
-### Healthcare
-- Patient care automation
-- Medical records processing
-- Clinical decision support
-
-### Financial Services
-- Fraud detection
-- Risk assessment
-- Compliance reporting
-
-### E-commerce
-- Product recommendations
-- Inventory management
-- Personalized shopping
-
-## 💰 Pricing
-
-| Plan | Price | Agents | Actions/Month |
-|------|-------|--------|---------------|
-| **Free** | $0 | 2 | 1,000 |
-| **Starter** | $49 | 5 | 10,000 |
-| **Professional** | $199 | 15 | 100,000 |
-| **Enterprise** | Custom | Unlimited | Unlimited |
-
-## 🚀 Quick Start
-
-1. **Sign Up** - Create account at [arjunai.ai](https://arjunai.ai)
-2. **Choose Industry** - Select from 12+ specialized templates
-3. **Connect Data** - Link your CRM, databases, or APIs
-4. **Deploy Agents** - Launch with one-click deployment
-
-## 📞 Contact
+## Contact
 
 - **Website**: [arjunai.ai](https://arjunai.ai)
 - **Email**: contact@arjunai.ai
 - **Sales**: sales@arjunai.ai
 - **Location**: Bengaluru, India
-
----
-
-*Built to shape a future where AI empowers society.*
